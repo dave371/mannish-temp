@@ -15,22 +15,22 @@
         "heading_phAF48": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Elevate Your Wellness",
+            "heading_size": "h0"
           }
         },
         "text_tNkH43": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Natural Products for a Balanced Life</p>",
             "text_style": "body"
           }
         },
         "button_9gt6XP": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
+            "button_label": "Explore Our Products",
+            "button_link": "shopify://collections",
             "button_style_secondary": false
           }
         }
