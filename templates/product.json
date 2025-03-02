@@ -69,7 +69,7 @@
         "share"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-c5c342e4-4a29-4aac-88b5-324408c4deef",
         "media_size": "medium",
         "constrain_to_viewport": true,
