@@ -101,7 +101,7 @@
         {%- if article.comments_count > 0 -%}
           {%- assign anchorId = '#Comments-' | append: article.id -%}
 
-          <h2 id="Comments-{{ article.id }}" tabindex="-1">
+          <h2 class="comment-section-text-color" id="Comments-{{ article.id }}" tabindex="-1">
             {{ 'blogs.article.comments' | t: count: article.comments_count }}
           </h2>
           {% paginate article.comments by 5 %}
@@ -137,20 +137,20 @@
               assign post_message = 'blogs.article.success_moderated'
             endif
           -%}
-          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          <h2 class="comment-section-text-color">{{ 'blogs.article.comment_form_title' | t }}</h2>
           {%- if form.errors -%}
             <div class="form__message" role="alert">
-              <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
+              <h3 class="form-status caption-large text-body comment-section-text-color" tabindex="-1" autofocus>
                 <span class="svg-wrapper">
                   {{- 'icon-error.svg' | inline_asset_content -}}
                 </span>
                 {{ 'templates.contact.form.error_heading' | t }}
               </h3>
             </div>
-            <ul class="form-status-list caption-large">
+            <ul class="form-status-list caption-large comment-section-text-color">
               {%- for field in form.errors -%}
                 <li>
-                  <a href="#CommentForm-{{ field }}" class="link">
+                  <a href="#CommentForm-{{ field }}" class="link comment-form-alert-color">
                     {%- if form.errors.translated_fields[field] contains 'author' -%}
                       {{ 'blogs.article.name' | t }}
                     {%- elsif form.errors.translated_fields[field] contains 'body' -%}

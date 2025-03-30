@@ -1,0 +1,27 @@
+{% form 'new_comment', article %}
+  {{ form.errors | default_errors }}
+
+  <div>
+    <label for="comment-author">Name</label>
+    <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}">
+  </div>
+
+  <div>
+    <label for="comment-email">Email</label>
+    <input type="text" id="comment-email" name="comment[email]" value="{{ form.email }}">
+  </div>
+
+  <div>
+    <label for="comment-body">Comment</label>
+    <textarea name="comment[body]" id="comment-body">{{ form.body }}</textarea>
+  </div>
+{% endform %}
+
+{% schema %}
+{
+  "name": "Article Comment",
+  "tag": "section",
+  "settings": [],
+  "blocks": []
+}
+{% endschema %}
