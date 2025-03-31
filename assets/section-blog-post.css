@@ -196,3 +196,8 @@
 .article-template__back:last-child {
   margin-bottom: 3.2rem;
 }
+
+.comment-section-text-color:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
