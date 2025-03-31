@@ -44,14 +44,9 @@
         "content"
       ],
       "settings": {}
-    },
-    "custom_blog_comment_aTLPRE": {
-      "type": "custom-blog-comment",
-      "settings": {}
     }
   },
   "order": [
-    "main",
-    "custom_blog_comment_aTLPRE"
+    "main"
   ]
 }
