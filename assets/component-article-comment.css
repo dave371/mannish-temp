@@ -1,0 +1,139 @@
+.article_comment_form_container {
+  background-color: #493030;
+  width: 100%;
+  padding: 3.6rem 0;
+}
+
+.article_comment_form_wrapper {
+  margin: 0 auto;
+  width: 50%;
+  position: relative;
+}
+
+h2 {
+  font-size: 24px;
+  color: #f8f4ec;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.article_input_label {
+  display: block;
+  font-size: 18px;
+  color: #f8f4ec;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.article_input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.article_input:focus {
+  box-shadow: none;
+}
+
+.article_textarea {
+  width: 100%;
+  height: 144px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+.article_textarea:focus {
+  box-shadow: none;
+}
+
+.article_comment_submit {
+  border: none;
+  height: 48px;
+  background-color: #804f4e;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #f8f4ec;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 16px 32px;
+}
+
+.input_error_message {
+  color: #f8f4ec;
+}
+
+.article_comment_submit:hover {
+  background-color: #9a615c;
+}
+
+.form_error_svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.form_name_email_format {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.form_name_email_format > div {
+  flex: 1;
+}
+
+.form_inputs_format {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form_error_format {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.article_input:focus,
+.article_textarea:focus,
+.article_comment_submit:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: transparent;
+}
+
+.form_confirm_submit {
+  position: absolute;
+  background-color: #f8f4ec;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  gap: 16px;
+}
+
+.form_confirm_submit h2 {
+  color: #292929;
+}
+
+.article_input:focus,
+.article_textarea:focus,
+.article_comment_submit:focus {
+  outline: 2px solid #c85a17;
+}
+
+@media (max-width: 750px) {
+  .article_comment_form_wrapper {
+    width: 90%;
+  }
+}

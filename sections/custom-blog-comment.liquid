@@ -1,30 +1,109 @@
-<h1>This is a new comment section for articles</h1>
+{{ 'component-article-comment.css' | asset_url | stylesheet_tag }}
 
-{% form 'new_comment', article %}
-  {{ form.errors | default_errors }}
+<div class="article_comment_form_container">
+  <div class="article_comment_form_wrapper">
+    {% form 'new_comment', article %}
+      {% if form.posted_successfully? %}
+        <div class="form_confirm_submit" role="status" aria-live="polite">
+          <div class="form_confirm_submit_icon ">
+            {{- 'check-square.svg' | inline_asset_content -}}
+          </div>
+          <h2>Your comment was successfully posted!</h2>
+        </div>
+      {% endif %}
 
-  <div>
-    <label for="comment-author">Name</label>
-    <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}">
+      <h2>Leave a comment</h2>
+
+      <div class="form_inputs_format">
+        <div class="form_name_email_format">
+          <div>
+            <label class="article_input_label" for="comment-author">Name</label>
+            <input
+              class="article_input"
+              type="text"
+              id="comment-author"
+              name="comment[author]"
+              value="{{ form.author }}"
+              autocomplete="name"
+              required
+              aria-required="true"
+              {% if form.errors contains 'author' %}
+                aria-invalid="true"
+                aria-describedby="author-error"
+              {% endif %}
+            >
+
+            {% for error in form.errors %}
+              {% if error == 'author' %}
+                <div id="author-error" class="form_error_format" role="alert">
+                  <div class="form_error_svg">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                  <span class="input_error_message">Name {{ form.errors.messages.author }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div>
+            <label class="article_input_label" for="comment-email">Email</label>
+            <input
+              class="article_input"
+              type="email"
+              id="comment-email"
+              name="comment[email]"
+              value="{{ form.email }}"
+              autocomplete="email"
+              required
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="email-error"
+              {% endif %}
+            >
+
+            {% for error in form.errors %}
+              {% if error == 'email' %}
+                <div id="email-error" class="form_error_format" role="alert">
+                  <div class="form_error_svg">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                  <span class="input_error_message">Email {{ form.errors.messages.email }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div>
+          <label class="article_input_label" for="comment-body">Comment</label>
+          <textarea
+            class="article_textarea"
+            name="comment[body]"
+            id="comment-body"
+            required
+            aria-required="true"
+            {% if form.errors contains 'body' %}
+              aria-invalid="true"
+              aria-describedby="body-error"
+            {% endif -%}
+          >{{ form.body }}</textarea>
+
+          {% for error in form.errors %}
+            {% if error == 'body' %}
+              <div id="body-error" class="form_error_format" role="alert">
+                <div class="form_error_svg">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                <span class="input_error_message">Comment {{ form.errors.messages.body }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div>
+          <button class="article_comment_submit" type="submit" aria-label="submit your comment">Post Comment</button>
+        </div>
+      </div>
+    {% endform %}
   </div>
-
-  <div>
-    <label for="comment-email">Email</label>
-    <input type="text" id="comment-email" name="comment[email]" value="{{ form.email }}">
-  </div>
-
-  <div>
-    <label for="comment-body">Comment</label>
-    <textarea name="comment[body]" id="comment-body">{{ form.body }}</textarea>
-  </div>
-{% endform %}
+</div>
 
 {% schema %}
 {
   "name": "Article Comment",
   "settings": [],
-  "presets": [
-    {"name": "This is the test section"}
-  ]
+  "presets": [{ "name": "This is the test section" }]
 }
 {% endschema %}
