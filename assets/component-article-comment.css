@@ -1,12 +1,10 @@
 .article_comment_form_container {
   background-color: #493030;
   width: 100%;
-  padding: 3.6rem 0;
 }
 
 .article_comment_form_wrapper {
   margin: 0 auto;
-  width: 50%;
   position: relative;
 }
 
@@ -82,6 +80,12 @@ h2 {
   display: flex;
   width: 100%;
   gap: 24px;
+}
+
+@media (max-width: 750px) {
+  .form_name_email_format {
+    flex-direction: column;
+  }
 }
 
 .form_name_email_format > div {

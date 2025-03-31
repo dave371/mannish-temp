@@ -127,14 +127,14 @@
                   </footer>
                 </article>
               {%- endfor -%}
-              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+              {% render 'pagination-article-comment', paginate: paginate, anchor: anchorId %}
             </div>
           {% endpaginate %}
         {%- endif -%}
       </div>
 
       {% comment %} article comment form {% endcomment %}
-      <div class="article_comment_form_container">
+      <div class="article_comment_form_container animate--slide-in page-width page-width--narrow scroll-trigger">
         <div class="article_comment_form_wrapper">
           {% form 'new_comment', article %}
             {% if form.posted_successfully? %}
