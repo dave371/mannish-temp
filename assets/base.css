@@ -3681,6 +3681,8 @@ details-disclosure > details {
   }
 }
 
-#shopify-section-template--19307167187162__1743449318837a4bb0 {
+[data-block-handle='review_widget'] {
+  box-shadow: 0 0 0 100vmax #f8f4ec;
+  clip-path: inset(0 -100vmax);
   background-color: #f8f4ec;
 }
