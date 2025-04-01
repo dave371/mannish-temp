@@ -1,0 +1,26 @@
+{{ 'custom-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-hero-wrapper">
+  <div class="hero-text">
+    <h1>This is the hero title</h1>
+    <p>This the hero subtext</p>
+
+    <a href="#">This is the hero cta</a>
+  </div>
+
+  <div class="hero-image">
+    <img
+      src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+      alt="temp placeholder"
+      width="100px"
+      height="100px"
+    >
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Hero",
+  "tag": "section"
+}
+{% endschema %}
