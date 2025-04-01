@@ -9,51 +9,9 @@
  */
 {
   "sections": {
-    "image_with_text_zGiW6E": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_phAF48": {
-          "type": "heading",
-          "settings": {
-            "heading": "Elevate Your Wellness",
-            "heading_size": "h0"
-          }
-        },
-        "text_tNkH43": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Natural Products for a Balanced Life</p>",
-            "text_style": "body"
-          }
-        },
-        "button_9gt6XP": {
-          "type": "button",
-          "settings": {
-            "button_label": "Explore Our Products",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_phAF48",
-        "text_tNkH43",
-        "button_9gt6XP"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-c5c342e4-4a29-4aac-88b5-324408c4deef",
-        "color_scheme": "scheme-c5c342e4-4a29-4aac-88b5-324408c4deef",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+    "custom_hero_rckJAQ": {
+      "type": "custom-hero",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -82,15 +40,10 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "custom_hero_rckJAQ": {
-      "type": "custom-hero",
-      "settings": {}
     }
   },
   "order": [
     "custom_hero_rckJAQ",
-    "image_with_text_zGiW6E",
     "featured_collection"
   ]
 }
