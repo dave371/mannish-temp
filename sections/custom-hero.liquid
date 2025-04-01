@@ -1,13 +1,12 @@
 {{ 'custom-hero.css' | asset_url | stylesheet_tag }}
 
-<h1>Hey there friend</h1>
-
-<div class="custom-hero-wrapper">
-  <div class="hero-text">
-    <h1>This is the hero title</h1>
-    <p>This the hero subtext</p>
-
-    <a href="#">This is the hero cta</a>
+<div class="custom-hero-wrapper page-width">
+  <div class="hero-text-wrapper">
+    <div class="hero-text">
+      <h1>Elevate Your Wellness</h1>
+      <p>Natural Products for a Balanced Life</p>
+      <a class="hero-cta" href="/collections/all">Explore Our Products</a>
+    </div>
   </div>
 
   <div class="hero-image">
@@ -24,6 +23,6 @@
 {
   "name": "Custom Hero",
   "settings": [],
-  "presets": [{"name": "Custom Hero"}]
+  "presets": [{ "name": "Custom Hero" }]
 }
 {% endschema %}
