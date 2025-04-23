@@ -1,9 +1,21 @@
-<h1>Custom Footer</h1>
+<style></style>
+
+<footer>
+  <div>
+    {{ section.settings.footer_branding | image_url: width: 200 | image_tag }}
+  </div>
+</footer>
 
 {% schema %}
 {
-  "name": "Custom Hero",
-  "settings": [],
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_branding",
+      "label": "Footer Branding"
+    }
+  ],
   "presets": [{ "name": "Custom Hero" }]
 }
 {% endschema %}
