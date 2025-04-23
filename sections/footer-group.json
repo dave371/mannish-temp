@@ -11,6 +11,12 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_footer_7i63kV": {
+      "type": "custom-footer",
+      "settings": {
+        "footer_branding": "shopify://shop_images/mannish.png"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -30,6 +36,7 @@
     }
   },
   "order": [
+    "custom_footer_7i63kV",
     "footer"
   ]
 }
