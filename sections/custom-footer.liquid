@@ -1,10 +1,15 @@
 <style>
   .custom-footer {
     background-color: {{section.settings.footer_background_color}};
-    display: flex;
-    justify-content: space-between;
     box-shadow: 0 0 0 100vmax {{section.settings.footer_background_color}};
     clip-path: inset(0 -100vmax);
+    padding-top: 24px;
+  }
+
+  .main-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
   }
 
   .footer-nav-links {
@@ -23,66 +28,98 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+
+  .custom-footer h2 {
+    color: #C85A17
+  }
+
+  .custom-footer a {
+    text-decoration: none;
+    color: #F8F4EC
+  }
+
+  .custom-footer p {
+    margin: 0;
+    text-align: center;
+    margin-top: 44px;
+    font-size: 14px;
+    color: #F8F4EC;
+  }
+
+  @media (max-width: 768px) {
+    .main-footer {
+      flex-direction: column;
+    }
+
+    .custom-footer {
+      padding: 0 1.5rem;
+      padding-top: 24px;
+    }
+
+    .footer-branding {
+      margin: 0 auto;
+    }
+  }
 </style>
 
 <footer class="custom-footer page-width page-width-desktop">
-  <div>
+  <div class="main-footer">
+    {% comment %}
+      <div class="footer-branding">
+        <div>
+          {{ section.settings.footer_branding | image_url: width: 150 | image_tag }}
+        </div>
+      </div>
+    {% endcomment %}
+
     <div>
-      {{ section.settings.footer_branding | image_url: width: 200 | image_tag }}
+      <h2>Shop</h2>
+      <div class="footer-nav-links">
+        {% for collection in collections %}
+          <a href="{{ collection.url }}">{{ collection.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <h2>Site</h2>
+      <div class="footer-nav-links">
+        {% for page in pages %}
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+      <h2>Follow Us</h2>
+      <div class="social-container">
+        <a target="_blank" href="{{ section.settings.facebook_url }}">
+          <div class="social-link">
+            {{ 'icon-facebook.svg' | inline_asset_content }}
+          </div>
+        </a>
+        <a target="_blank" href="{{ section.settings.twitter_url }}">
+          <div class="social-link">
+            {{ 'icon-twitter.svg' | inline_asset_content }}
+          </div>
+        </a>
+        <a target="_blank" href="{{ section.settings.instagram_url }}">
+          <div class="social-link">
+            {{ 'icon-instagram.svg' | inline_asset_content }}
+          </div>
+        </a>
+        <a target="_blank" href="{{ section.settings.youtube_url }}">
+          <div class="social-link">
+            {{ 'icon-youtube.svg' | inline_asset_content }}
+          </div>
+        </a>
+        <a target="_blank" href="{{ section.settings.tiktok_url }}">
+          <div class="social-link">
+            {{ 'icon-tiktok.svg' | inline_asset_content }}
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-
-  <div>
-    <h2>Shop</h2>
-
-    <div class="footer-nav-links">
-      {% for collection in collections %}
-        <a href="{{ collection.url }}">{{ collection.title }}</a>
-      {% endfor %}
-    </div>
-  </div>
-
-  <div>
-    <h2>Site</h2>
-
-    <div class="footer-nav-links">
-      {% for page in pages %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
-      {% endfor %}
-    </div>
-  </div>
-
-  <div>
-    <h2>Follow Us</h2>
-
-    <div class="social-container">
-      <a target="_blank" href="{{ section.settings.facebook_url }}">
-        <div class="social-link">
-          {{ 'icon-facebook.svg' | inline_asset_content }}
-        </div>
-      </a>
-      <a target="_blank" href="{{ section.settings.twitter_url }}">
-        <div class="social-link">
-          {{ 'icon-twitter.svg' | inline_asset_content }}
-        </div>
-      </a>
-      <a target="_blank" href="{{ section.settings.instagram_url }}">
-        <div class="social-link">
-          {{ 'icon-instagram.svg' | inline_asset_content }}
-        </div>
-      </a>
-      <a target="_blank" href="{{ section.settings.youtube_url }}">
-        <div class="social-link">
-          {{ 'icon-youtube.svg' | inline_asset_content }}
-        </div>
-      </a>
-      <a target="_blank" href="{{ section.settings.tiktok_url }}">
-        <div class="social-link">
-          {{ 'icon-tiktok.svg' | inline_asset_content }}
-        </div>
-      </a>
-    </div>
-  </div>
+  <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} Mannish Herbairy. All rights reserved.</p>
 </footer>
 
 {% schema %}
