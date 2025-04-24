@@ -1,8 +1,59 @@
-<style></style>
+<style>
+  .custom-footer {
+    background-color: {{section.settings.footer_background_color}};
+    display: flex;
+    justify-content: space-between;
+  }
 
-<footer>
+  .footer-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+</style>
+
+<footer class="custom-footer page-width page-width-desktop">
   <div>
-    {{ section.settings.footer_branding | image_url: width: 200 | image_tag }}
+    <div>
+      {{ section.settings.footer_branding | image_url: width: 200 | image_tag }}
+    </div>
+  </div>
+
+  <div>
+    <h2>Shop</h2>
+
+    <div class="footer-nav-links">
+      {% for collection in collections %}
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <h2>Site</h2>
+
+    <div class="footer-nav-links">
+      {% for page in pages %}
+        <a href="{{ page.url }}">{{ page.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <h2>Follow Us</h2>
+
+    <div>
+      <a href="{{ section.settings.twitter_url }}">
+        <div class="social-link">
+          {{ 'icon-twitter.svg' | inline_asset_content }}
+        </div>
+      </a>
+    </div>
   </div>
 </footer>
 
@@ -11,9 +62,20 @@
   "name": "Custom Footer",
   "settings": [
     {
+      "type": "color",
+      "id": "footer_background_color",
+      "label": "Footer Background Color",
+      "default": "#F8F4EC"
+    },
+    {
       "type": "image_picker",
       "id": "footer_branding",
       "label": "Footer Branding"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter Link"
     }
   ],
   "presets": [{ "name": "Custom Hero" }]
