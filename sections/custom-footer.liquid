@@ -3,6 +3,8 @@
     background-color: {{section.settings.footer_background_color}};
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 0 0 100vmax {{section.settings.footer_background_color}};
+    clip-path: inset(0 -100vmax);
   }
 
   .footer-nav-links {
@@ -14,6 +16,12 @@
   .social-link {
     width: 44px;
     height: 44px;
+  }
+
+  .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 </style>
 
@@ -47,10 +55,30 @@
   <div>
     <h2>Follow Us</h2>
 
-    <div>
-      <a href="{{ section.settings.twitter_url }}">
+    <div class="social-container">
+      <a target="_blank" href="{{ section.settings.facebook_url }}">
+        <div class="social-link">
+          {{ 'icon-facebook.svg' | inline_asset_content }}
+        </div>
+      </a>
+      <a target="_blank" href="{{ section.settings.twitter_url }}">
         <div class="social-link">
           {{ 'icon-twitter.svg' | inline_asset_content }}
+        </div>
+      </a>
+      <a target="_blank" href="{{ section.settings.instagram_url }}">
+        <div class="social-link">
+          {{ 'icon-instagram.svg' | inline_asset_content }}
+        </div>
+      </a>
+      <a target="_blank" href="{{ section.settings.youtube_url }}">
+        <div class="social-link">
+          {{ 'icon-youtube.svg' | inline_asset_content }}
+        </div>
+      </a>
+      <a target="_blank" href="{{ section.settings.tiktok_url }}">
+        <div class="social-link">
+          {{ 'icon-tiktok.svg' | inline_asset_content }}
         </div>
       </a>
     </div>
@@ -76,6 +104,26 @@
       "type": "url",
       "id": "twitter_url",
       "label": "Twitter Link"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook Link"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram Link"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube Link"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok Link"
     }
   ],
   "presets": [{ "name": "Custom Hero" }]
