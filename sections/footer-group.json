@@ -14,7 +14,9 @@
     "custom_footer_7i63kV": {
       "type": "custom-footer",
       "settings": {
-        "footer_branding": "shopify://shop_images/mannish.png"
+        "footer_background_color": "#F8F4EC",
+        "footer_branding": "shopify://shop_images/mannish.png",
+        "twitter_url": "https://x.com/MannishHerbiary"
       }
     },
     "footer": {
