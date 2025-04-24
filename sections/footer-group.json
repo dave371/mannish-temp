@@ -14,9 +14,13 @@
     "custom_footer_7i63kV": {
       "type": "custom-footer",
       "settings": {
-        "footer_background_color": "#F8F4EC",
+        "footer_background_color": "#f8f4ec",
         "footer_branding": "shopify://shop_images/mannish.png",
-        "twitter_url": "https://x.com/MannishHerbiary"
+        "twitter_url": "https://x.com/MannishHerbiary",
+        "facebook_url": "https://www.facebook.com/MannishHerbiary/",
+        "instagram_url": "https://www.instagram.com/mannishherbiary/",
+        "youtube_url": "https://www.youtube.com/@MannishHerbiary",
+        "tiktok_url": "https://www.tiktok.com/@mannishherbiary"
       }
     },
     "footer": {
