@@ -9,8 +9,14 @@
  */
 {
   "sections": {
+    "c_hero_miGTPJ": {
+      "type": "c-hero",
+      "name": "C-Hero",
+      "settings": {}
+    },
     "custom_hero_rckJAQ": {
       "type": "custom-hero",
+      "disabled": true,
       "settings": {}
     },
     "featured_collection": {
@@ -61,6 +67,7 @@
     }
   },
   "order": [
+    "c_hero_miGTPJ",
     "custom_hero_rckJAQ",
     "featured_collection",
     "featured_blog_fLzNpT"
