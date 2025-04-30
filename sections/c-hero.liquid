@@ -1,6 +1,59 @@
+<style>
+  .hero-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left 0;
+    z-index: -1;
+  }
+
+  .hero-container {
+    width: 100%;
+    color: white;
+  }
+
+  .hero-container h1, .hero-container p{
+    margin: 0;
+    color: white;
+  }
+
+  .hero-container h1 {
+    font-size: 58px;
+    margin-bottom: 8px;
+  }
+
+  .hero-container p {
+    font-size: 18px;
+  }
+
+  .hero-content {
+    width: fit-content;
+  }
+</style>
+
 <div class="hero-wrapper">
   {{ section.settings.hero_background_image | image_url: width: 1600, height: 900 | image_tag }}
-  <div class="hero-container"></div>
+  <div class="hero-container page-width">
+    <div class="hero-content">
+      <h1>Elevate Your Wellness</h1>
+      <p>Discover products and insights crafted to support your holistic health.</p>
+
+      <a class="c-hero-button" href="{{ section.settings.hero_cta_1_link }}">{{ section.settings.hero_cta_1_text }}</a>
+      <a class="c-hero-button counter" href="{{ section.settings.hero_cta_2_link }}">
+        {{ section.settings.hero_cta_2_text }}
+      </a>
+    </div>
+  </div>
 </div>
 
 {% schema %}
@@ -11,6 +64,26 @@
       "type": "image_picker",
       "id": "hero_background_image",
       "label": "Hero Image"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_1_link",
+      "label": "Hero CTA 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_1_text",
+      "label": "Hero CTA 1 Text"
+    },
+    {
+      "type": "url",
+      "id": "hero_cta_2_link",
+      "label": "Hero CTA 2 Link"
+    },
+    {
+      "type": "text",
+      "id": "hero_cta_2_text",
+      "label": "Hero CTA 2 Text"
     }
   ],
   "presets": [{ "name": "C-Hero" }]
