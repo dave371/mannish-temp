@@ -1,8 +1,8 @@
-.blog-background {
+/* .blog-background {
   background-color: #f8f4ec;
   box-shadow: 0 0 0 100vmax #f8f4ec;
   clip-path: inset(0 -100vmax);
-}
+} */
 
 .blog-articles {
   display: grid;
