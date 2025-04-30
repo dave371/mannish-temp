@@ -95,7 +95,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 h1 {
-  font-family: "Satoshi", sans;
+  font-family: "Satoshi", sans-serif;
 }
 
 .page-width.drawer-menu {
