@@ -13,7 +13,11 @@
       "type": "c-hero",
       "name": "C-Hero",
       "settings": {
-        "hero_background_image": "shopify://shop_images/pexels-cottonbro-9943330.jpg"
+        "hero_background_image": "shopify://shop_images/pexels-cottonbro-9943330.jpg",
+        "hero_cta_1_link": "shopify://collections/all",
+        "hero_cta_1_text": "Explore Our Products",
+        "hero_cta_2_link": "shopify://blogs/news",
+        "hero_cta_2_text": "Read Out Latest Insights"
       }
     },
     "custom_hero_rckJAQ": {
