@@ -15,10 +15,8 @@
       "settings": {
         "hero_background_image": "shopify://shop_images/pexels-cottonbro-9943330.jpg",
         "hero_cta_1_link": "shopify://collections/all",
-        "hero_cta_1_color": "#493030",
         "hero_cta_1_text": "Explore Our Products",
         "hero_cta_2_link": "shopify://blogs/news",
-        "hero_cta_2_color": "#c85a17",
         "hero_cta_2_text": "Read Out Latest Insights",
         "primary_button": "#493030",
         "secondary_button": "#c85a17"
@@ -32,13 +30,13 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
+        "title": "Top Picks",
+        "heading_size": "h1",
+        "description": "<p>Here are some curated picks to get you ready to go.</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 6,
         "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
@@ -52,7 +50,7 @@
         "show_rating": false,
         "quick_add": "standard",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 44,
         "padding_bottom": 36
       }
@@ -61,7 +59,7 @@
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "heading": "Blog",
+        "heading": "Wellness Insights",
         "heading_size": "h1",
         "blog": "news",
         "post_limit": 3,
