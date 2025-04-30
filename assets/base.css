@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Satoshi";
-  src: url("{{ 'Satoshi-Variable.woff2' | asset_url }}") format("woff2");
+  src: url("https://cdn.shopify.com/s/files/1/0746/7873/0970/files/Satoshi-Variable.woff2?v=1746042012")
+    format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
