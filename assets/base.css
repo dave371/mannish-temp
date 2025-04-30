@@ -23,8 +23,6 @@
   --focused-base-outline-offset: 0.3rem;
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-  --font-body-family: "Cabinet Grotesk", system-ui, sans-serif;
-  --font-heading-family: "Satoshi", system-ui, sans-serif;
 }
 
 .product-card-wrapper .card,
@@ -102,6 +100,10 @@
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 100%;
+}
+
+h1 {
+  font-family: "Satoshi";
 }
 
 .page-width.drawer-menu {
