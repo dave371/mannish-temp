@@ -3686,3 +3686,14 @@ details-disclosure > details {
   clip-path: inset(0 -100vmax);
   background-color: #f8f4ec;
 }
+
+/* main page layout */
+.full-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.full-layout main {
+  flex: 1;
+}
