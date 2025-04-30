@@ -48,22 +48,6 @@
     %}
 
     {% style %}
-      @font-face {
-        font-family: 'Cabinet Grotesk';
-        src: url("{{ 'CabinetGrotesk-Variable.woff2' | file_url }}") format('woff2');
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'Satoshi';
-        src: url("{{ 'Satoshi-Variable.woff2' | file_url }}") format('woff2');
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-      }
-
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
