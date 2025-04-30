@@ -60,12 +60,12 @@
       height: 48px;
     }
 
-    .c-hero-button .primary: {
-        background-color: {{ section.settings.hero_cta_1_color }}
+    .c-hero-button.primary: {
+        background-color: {{ section.settings.primary_button }}
     }
 
-    .c-hero-button .secondary: {
-        background-color: {{ section.settings.hero_cta_2_color }}
+    .c-hero-button.secondary: {
+        background-color: {{ section.settings.secondary_button }}
     }
 </style>
 
@@ -103,11 +103,6 @@
       "label": "Hero CTA 1 Link"
     },
     {
-      "type": "color",
-      "id": "hero_cta_1_color",
-      "label": "Hero CTA 1 Color"
-    },
-    {
       "type": "text",
       "id": "hero_cta_1_text",
       "label": "Hero CTA 1 Text"
@@ -116,11 +111,6 @@
       "type": "url",
       "id": "hero_cta_2_link",
       "label": "Hero CTA 2 Link"
-    },
-    {
-      "type": "color",
-      "id": "hero_cta_2_color",
-      "label": "Hero CTA 2 Color"
     },
     {
       "type": "text",
