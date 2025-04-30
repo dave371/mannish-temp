@@ -42,7 +42,7 @@
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "reduce-logo-size",
         "show_line_separator": false,
         "color_scheme": "scheme-c5c342e4-4a29-4aac-88b5-324408c4deef",
         "menu_color_scheme": "scheme-c5c342e4-4a29-4aac-88b5-324408c4deef",
@@ -51,8 +51,8 @@
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 8,
+        "padding_bottom": 8
       }
     }
   },
