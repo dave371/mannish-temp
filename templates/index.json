@@ -12,7 +12,9 @@
     "c_hero_miGTPJ": {
       "type": "c-hero",
       "name": "C-Hero",
-      "settings": {}
+      "settings": {
+        "hero_background_image": "shopify://shop_images/pexels-cottonbro-9943330.jpg"
+      }
     },
     "custom_hero_rckJAQ": {
       "type": "custom-hero",
