@@ -3702,3 +3702,7 @@ details-disclosure > details {
 .full-layout main {
   flex: 1;
 }
+
+.rm-padding {
+  padding: 0;
+}
