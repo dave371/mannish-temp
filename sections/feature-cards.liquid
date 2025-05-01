@@ -7,7 +7,7 @@
 <!-- Link to the external CSS file -->
 <link rel="stylesheet" href="{{ 'feature-cards.css' | asset_url }}">
 
-<section class="feature-cards-section">
+<section class="feature-cards-section page-width">
   <div class="feature-cards-container">
     {% for block in section.blocks %}
       <div class="feature-card" style="background-color: {{ block.settings.card_background }}">
