@@ -98,23 +98,6 @@
         "padding_bottom": 36
       }
     },
-    "socials_section_td8wiM": {
-      "type": "socials-section",
-      "name": "Socials Section",
-      "settings": {
-        "newsletter_title": "Subscribe to Our Newsletter",
-        "newsletter_text": "Stay updated with our latest news and offers.",
-        "newsletter_placeholder": "Enter your email",
-        "newsletter_button_text": "Subscribe",
-        "social_title": "Follow Us",
-        "social_text": "Connect with us on social platforms.",
-        "twitter_url": "",
-        "instagram_url": "",
-        "tiktok_url": "",
-        "youtube_url": "",
-        "facebook_url": ""
-      }
-    },
     "featured_blog_fLzNpT": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -139,7 +122,6 @@
     "custom_hero_rckJAQ",
     "feature_cards_tdnLBW",
     "featured_collection",
-    "socials_section_td8wiM",
     "featured_blog_fLzNpT"
   ]
 }
