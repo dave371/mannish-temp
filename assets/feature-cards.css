@@ -3,14 +3,19 @@
   padding-bottom: 27px;
 }
 
-/* Container for the entire section */
+.feature-cards-heading {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: #292929;
+}
+
 .feature-cards-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-/* Individual card styling */
 .feature-card {
   flex: 1 1 100%;
   padding: 20px;
@@ -19,37 +24,34 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
 }
 
-/* Icon styling */
 .feature-card-icon img {
   width: 50px;
   height: 50px;
 }
 
-/* Title styling */
 .feature-card-title {
   min-height: 65px;
-  font-size: 1.5em;
+  font-size: 24px;
   color: white;
   font-weight: 500;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 0;
 }
 
-/* Description styling */
 .feature-card-description {
-  font-size: 1em;
+  font-size: 16px;
   color: white;
   font-weight: 300;
   margin: 0;
   flex-grow: 1;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .feature-cards-container {
     flex-wrap: wrap;
