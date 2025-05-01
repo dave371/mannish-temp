@@ -105,8 +105,13 @@
   {{ section.settings.hero_background_image | image_url: width: 1980, height: 1080 | image_tag }}
   <div class="hero-container page-width">
     <div class="hero-content">
-      <h1>Elevate Your Wellness</h1>
-      <p>Discover products and insights crafted to support your holistic health.</p>
+      {% comment %}
+        <h1>Elevate Your Wellness</h1>
+        <p>Discover products and insights crafted to support your holistic health.</p>
+      {% endcomment %}
+
+      <h1>{{ section.settings.title }}</h1>
+      <p>{{ section.settings.sub_title }}</p>
 
       <div class="cta-container">
         <a class="c-hero-button primary" href="{{ section.settings.hero_cta_1_link }}">
@@ -158,6 +163,16 @@
       "type": "color",
       "id": "secondary_button",
       "label": "Secondary Button Color"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title"
     }
   ],
   "presets": [{ "name": "C-Hero" }]
