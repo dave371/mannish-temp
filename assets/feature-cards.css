@@ -1,0 +1,41 @@
+/* Container for the entire section */
+.feature-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Individual card styling */
+.feature-card {
+  flex: 1 1 calc(33.333% - 20px);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Icon styling */
+.feature-card-icon img {
+  max-width: 60px;
+  margin-bottom: 15px;
+}
+
+/* Title styling */
+.feature-card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Description styling */
+.feature-card-description {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-card {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,84 @@
+{% comment %}
+  Feature Cards Section
+  Displays three customizable cards, each with an icon, title, and description.
+  Users can edit content and background color via the Shopify theme editor.
+{% endcomment %}
+
+<!-- Link to the external CSS file -->
+<link rel="stylesheet" href="{{ 'feature-cards.css' | asset_url | stylesheet_tag }}">
+
+<section class="feature-cards-section">
+  <div class="feature-cards-container">
+    {% for block in section.blocks %}
+      <div class="feature-card" style="background-color: {{ block.settings.card_background }}">
+        {% if block.settings.icon != blank %}
+          <div class="feature-card-icon">
+            <img
+              src="{{ block.settings.icon | image_url: width: 50, height: 50 }}"
+              alt="{{ block.settings.title | escape }}"
+              width="50"
+              height="50"
+            >
+          </div>
+        {% endif %}
+        <h3 class="feature-card-title">{{ block.settings.title }}</h3>
+        <p class="feature-card-description">{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Card description goes here."
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card Background Color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Feature Cards",
+      "blocks": [
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        },
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
