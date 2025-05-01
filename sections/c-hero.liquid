@@ -32,7 +32,7 @@
       font-size: 58px;
       margin-bottom: 8px;
       font-weight: 700;
-      letter-spacing: 100%;
+      letter-spacing: -1px;
     }
 
     .hero-container p {
@@ -73,21 +73,34 @@
       background-color: {{ section.settings.secondary_button }};
     }
 
+    @media (max-width: 769px) {
+      .hero-content {
+        width: 80%;
+      }
+    }
+
     @media (max-width: 426px) {
+      .hero-content {
+        width: 100%;
+      }
+
       .hero-wrapper {
         flex-direction: column;
         height: fit-content;
+        background-color: #493030;
       }
 
       .hero-wrapper img {
         position: static;
         width: 100%;
         height: 300px;
+        z-index: 0;
       }
 
       .hero-container h1, .hero-container p{
         color: #292929;
         text-align: center;
+        color: #FFFFFF;
       }
 
       .hero-container h1 {
@@ -105,11 +118,6 @@
   {{ section.settings.hero_background_image | image_url: width: 1980, height: 1080 | image_tag }}
   <div class="hero-container page-width">
     <div class="hero-content">
-      {% comment %}
-        <h1>Elevate Your Wellness</h1>
-        <p>Discover products and insights crafted to support your holistic health.</p>
-      {% endcomment %}
-
       <h1>{{ section.settings.title }}</h1>
       <p>{{ section.settings.sub_title }}</p>
 
