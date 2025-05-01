@@ -38,7 +38,7 @@
             "icon": "shopify://shop_images/heart.svg",
             "title": "Holistic Wellness Solutions",
             "description": "We provide health and wellness products specifically curated for men, acknowledging and addressing the unique health challenges faced within our community.",
-            "card_background": "#ffffff"
+            "card_background": "#493030"
           }
         },
         "card_Lib7QK": {
@@ -47,7 +47,7 @@
             "icon": "shopify://shop_images/book-open.svg",
             "title": "Educational Empowerment",
             "description": "Through our blog and social media platforms, we offer insightful content aimed at educating and empowering men to take control of their health journeys.",
-            "card_background": "#ffffff"
+            "card_background": "#493030"
           }
         },
         "card_xr7VEc": {
@@ -56,7 +56,7 @@
             "icon": "shopify://shop_images/users.svg",
             "title": "Community Engagement",
             "description": "We foster a supportive community where men can share experiences, challenges, and successes, promoting collective growth and wellness.",
-            "card_background": "#ffffff"
+            "card_background": "#493030"
           }
         }
       },
