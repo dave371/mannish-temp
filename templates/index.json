@@ -98,6 +98,18 @@
         "padding_bottom": 36
       }
     },
+    "newsletter_section_qV6iNj": {
+      "type": "newsletter-section",
+      "name": "Newsletter Section",
+      "settings": {
+        "section_title": "Sign up for our newsletter",
+        "subheading": "Get the latest updates delivered straight to your inbox.",
+        "image": "shopify://shop_images/pexels-cottonbro-9943330.jpg",
+        "email_placeholder": "Enter your email",
+        "button_text": "Subscribe",
+        "confirmation_message": "Thanks for subscribing! Check your inbox for updates."
+      }
+    },
     "featured_blog_fLzNpT": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -122,6 +134,7 @@
     "custom_hero_rckJAQ",
     "feature_cards_tdnLBW",
     "featured_collection",
+    "newsletter_section_qV6iNj",
     "featured_blog_fLzNpT"
   ]
 }
