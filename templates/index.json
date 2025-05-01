@@ -102,11 +102,11 @@
       "type": "newsletter-section",
       "name": "Newsletter Section",
       "settings": {
-        "section_title": "Sign up for our newsletter",
-        "subheading": "Get the latest updates delivered straight to your inbox.",
+        "section_title": "Stay Connected to Your Wellness Journey",
+        "subheading": "Subscribe to receive the latest health tips, product updates, and exclusive offers tailored for your well-being.",
         "image": "shopify://shop_images/pexels-cottonbro-9943330.jpg",
         "email_placeholder": "Enter your email",
-        "button_text": "Subscribe",
+        "button_text": "Join the Movement!",
         "confirmation_message": "Thanks for subscribing! Check your inbox for updates."
       }
     },
