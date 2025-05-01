@@ -1,0 +1,152 @@
+{% comment %}
+  Socials Section
+  Combines a newsletter signup and social media links with editable settings.
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'socials-section.css' | asset_url }}">
+
+<section class="socials-section page-width">
+  <!-- Newsletter Aspect -->
+  <div class="socials-aspect newsletter-aspect">
+    {% if section.settings.newsletter_title %}
+      <h2 class="aspect-title">{{ section.settings.newsletter_title }}</h2>
+    {% endif %}
+    {% if section.settings.newsletter_text %}
+      <p class="aspect-text">{{ section.settings.newsletter_text }}</p>
+    {% endif %}
+    <div class="aspect-content">
+      <div class="newsletter-form-wrapper">
+        <form method="post" action="/contact#contact_form" accept-charset="UTF-8" class="newsletter-form">
+          <input type="hidden" name="form_type" value="customer">
+          <label for="newsletter-email-{{ section.id }}" class="visually-hidden">Email address</label>
+          <input
+            type="email"
+            name="contact[email]"
+            id="newsletter-email-{{ section.id }}"
+            placeholder="{{ section.settings.newsletter_placeholder }}"
+            required
+          >
+          <button type="submit">{{ section.settings.newsletter_button_text }}</button>
+        </form>
+      </div>
+      <div class="newsletter-image">
+        {% if section.settings.newsletter_image %}
+          <img
+            src="{{ section.settings.newsletter_image | image_url: width: 300, height: 500 }}"
+            alt="{{ section.settings.newsletter_title }}"
+            width="300"
+            height="500"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Platforms Aspect -->
+  <div class="socials-aspect platforms-aspect">
+    {% if section.settings.social_title %}
+      <h2 class="aspect-title">{{ section.settings.social_title }}</h2>
+    {% endif %}
+    {% if section.settings.social_text %}
+      <p class="aspect-text">{{ section.settings.social_text }}</p>
+    {% endif %}
+    <div class="aspect-content social-icons-container">
+      {% assign platforms = 'twitter,instagram,tiktok,youtube,facebook' | split: ',' %}
+      {% for handle in platforms %}
+        {% assign url = section.settings[handle | append: '_url'] %}
+        {% if url %}
+          <a
+            href="{{ url }}"
+            class="social-icon social-icon--{{ handle }}"
+            target="_blank"
+            rel="noopener"
+            aria-label="{{ handle | capitalize }}"
+          >
+            <svg class="icon icon-{{ handle }}" role="img">
+              <use xlink:href="#icon-{{ handle }}"></use>
+            </svg>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Socials Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Subscribe to Our Newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter Text",
+      "default": "Stay updated with our latest news and offers."
+    },
+    {
+      "type": "image_picker",
+      "id": "newsletter_image",
+      "label": "Newsletter Image"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Email Input Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Subscribe Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "social_title",
+      "label": "Social Media Title",
+      "default": "Follow Us"
+    },
+    {
+      "type": "textarea",
+      "id": "social_text",
+      "label": "Social Media Text",
+      "default": "Connect with us on social platforms."
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Socials Section"
+    }
+  ]
+}
+{% endschema %}
