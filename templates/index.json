@@ -29,6 +29,45 @@
       "disabled": true,
       "settings": {}
     },
+    "feature_cards_tdnLBW": {
+      "type": "feature-cards",
+      "blocks": {
+        "card_enEEJR": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/heart.svg",
+            "title": "Holistic Wellness Solutions",
+            "description": "We provide health and wellness products specifically curated for men, acknowledging and addressing the unique health challenges faced within our community.",
+            "card_background": "#ffffff"
+          }
+        },
+        "card_Lib7QK": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/book-open.svg",
+            "title": "Educational Empowerment",
+            "description": "Through our blog and social media platforms, we offer insightful content aimed at educating and empowering men to take control of their health journeys.",
+            "card_background": "#ffffff"
+          }
+        },
+        "card_xr7VEc": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/users.svg",
+            "title": "Community Engagement",
+            "description": "We foster a supportive community where men can share experiences, challenges, and successes, promoting collective growth and wellness.",
+            "card_background": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "card_enEEJR",
+        "card_Lib7QK",
+        "card_xr7VEc"
+      ],
+      "name": "Feature Cards",
+      "settings": {}
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -79,6 +118,7 @@
   "order": [
     "c_hero_miGTPJ",
     "custom_hero_rckJAQ",
+    "feature_cards_tdnLBW",
     "featured_collection",
     "featured_blog_fLzNpT"
   ]
