@@ -119,9 +119,9 @@ h1 {
     padding: 0 9rem;
   }
 
-  .page-width-desktop {
+  /* .page-width-desktop {
     padding: 0;
-  }
+  } */
 
   .page-width-tablet {
     padding: 0 5rem;
@@ -811,7 +811,7 @@ summary::-webkit-details-marker {
 
 .title-wrapper--self-padded-tablet-down,
 .title-wrapper--self-padded-mobile {
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   padding-right: 1.5rem;
 }
 
@@ -3701,10 +3701,6 @@ details-disclosure > details {
 
 .full-layout main {
   flex: 1;
-}
-
-.rm-padding {
-  padding: 0;
 }
 
 .headings {
