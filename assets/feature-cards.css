@@ -52,13 +52,22 @@
   flex-grow: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
   .feature-cards-container {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
+}
 
+@media (max-width: 768px) {
   .feature-card {
     aspect-ratio: auto;
     height: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-cards-container {
+    grid-template-columns: 1fr;
   }
 }
