@@ -3706,3 +3706,8 @@ details-disclosure > details {
 .rm-padding {
   padding: 0;
 }
+
+.headings {
+  font-size: 32px;
+  font-weight: 500;
+}
