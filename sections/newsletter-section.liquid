@@ -1,0 +1,106 @@
+{% comment %}
+  Newsletter Section
+  Two-column layout: left for editable title, description, form and confirmation;
+  right for an editable image.
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'newsletter-section.css' | asset_url }}">
+
+<section class="newsletter-section page-width">
+  <div class="newsletter-wrapper">
+    <!-- Left column: title, copy, form, and confirmation -->
+    <div class="newsletter-content">
+      {% if section.settings.section_title != blank %}
+        <h2 class="newsletter-title">{{ section.settings.section_title }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="newsletter-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% form 'customer' %}
+        {% if form.posted_successfully? %}
+          {% if section.settings.confirmation_message != blank %}
+            <p class="newsletter-confirmation">{{ section.settings.confirmation_message }}</p>
+          {% else %}
+            <p class="newsletter-confirmation">{{ 'general.newsletter_form.confirmation' | t }}</p>
+          {% endif %}
+        {% else %}
+          {{ form.errors | default_errors }}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label for="newsletter-email-{{ section.id }}" class="visually-hidden">Email address</label>
+          <input
+            type="email"
+            name="contact[email]"
+            id="newsletter-email-{{ section.id }}"
+            class="newsletter-input"
+            placeholder="{{ section.settings.email_placeholder }}"
+            required
+          >
+          <button type="submit" class="newsletter-button">
+            {{ section.settings.button_text }}
+          </button>
+        {% endif %}
+      {% endform %}
+    </div>
+
+    <!-- Right column: image -->
+    <div class="newsletter-image">
+      {% if section.settings.image %}
+        <img
+          src="{{ section.settings.image | image_url: width: 600, height: 400 }}"
+          alt="{{ section.settings.section_title }}"
+          width="600"
+          height="400"
+        >
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Sign up for our newsletter"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Description",
+      "default": "Get the latest updates delivered straight to your inbox."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right-hand Image"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email Placeholder",
+      "default": "Enter your email"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "textarea",
+      "id": "confirmation_message",
+      "label": "Confirmation Message",
+      "default": "Thanks for subscribing! Check your inbox for updates."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Section"
+    }
+  ]
+}
+{% endschema %}

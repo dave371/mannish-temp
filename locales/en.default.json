@@ -10,6 +10,9 @@
       "admin_link_html": "Are you the store owner? <a href=\"/admin\" class=\"link underlined-link\">Log in here</a>",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
+    "newsletter_form": {
+      "confirmation": "Thanks for subscribing! Check your inbox for updates."
+    },
     "social": {
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
@@ -62,6 +65,7 @@
     "success": "Thanks for subscribing",
     "button_label": "Subscribe"
   },
+
   "accessibility": {
     "skip_to_text": "Skip to content",
     "skip_to_product_info": "Skip to product information",
