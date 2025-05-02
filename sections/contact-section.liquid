@@ -32,9 +32,12 @@
         {% if section.settings.page_title %}
           <h2 class="contact-title">{{ section.settings.page_title }}</h2>
         {% endif %}
-        {% if section.settings.page_subheading %}
-          <p class="contact-subheading">{{ section.settings.page_subheading }}</p>
-        {% endif %}
+
+        <p class="contact-subheading">
+          Have questions, feedback, or just want to say hello? We're here to help and would love to hear from you.
+          Please fill out the form below, and we'll get back to you as soon as possible. You can also contact us at
+          <a href="mailto:{{ section.settings.brand_email }}">{{ section.settings.brand_email }}</a>.
+        </p>
       </div>
 
       <!-- Form Column -->
@@ -155,11 +158,6 @@
       "default": "Get in Touch"
     },
     {
-      "type": "richtext",
-      "id": "page_subheading",
-      "label": "Page Subheading"
-    },
-    {
       "type": "text",
       "id": "success_heading",
       "label": "Success Message Heading",
@@ -188,6 +186,11 @@
       "id": "focus_outline_color",
       "label": "Focus Outline Color",
       "default": "#C85A17"
+    },
+    {
+      "type": "text",
+      "id": "brand_email",
+      "label": "Contact Email"
     }
   ],
   "presets": [
