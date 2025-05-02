@@ -3687,9 +3687,9 @@ details-disclosure > details {
 }
 
 [data-block-handle='review_widget'] {
-  box-shadow: 0 0 0 100vmax #f8f4ec;
+  box-shadow: 0 0 0 100vmax #ffffff;
   clip-path: inset(0 -100vmax);
-  background-color: #f8f4ec;
+  background-color: #ffffff;
 }
 
 /* main page layout */
