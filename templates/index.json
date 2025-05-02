@@ -110,6 +110,25 @@
         "confirmation_message": "Thanks for subscribing! Check your inbox for updates."
       }
     },
+    "social_media_section_FQPyqt": {
+      "type": "social-media-section",
+      "name": "Social Media Section",
+      "settings": {
+        "icon_bg_color": "#F0F0F0",
+        "section_social_title": "Join Our Community",
+        "section_social_subtitle": "Follow us for daily health tips, product updates, and motivational content to support your wellness journey.",
+        "twitter_url": "https://x.com/MannishHerbiary",
+        "twitter_icon": "shopify://shop_images/Platform_X_Twitter_Color_Original.svg",
+        "instagram_url": "https://www.instagram.com/mannishherbiary/",
+        "instagram_icon": "shopify://shop_images/Platform_Instagram_Color_Original.svg",
+        "tiktok_url": "https://www.tiktok.com/@mannishherbiary",
+        "tiktok_icon": "shopify://shop_images/Platform_TikTok_Color_Original.svg",
+        "youtube_url": "https://www.youtube.com/@MannishHerbiary",
+        "youtube_icon": "shopify://shop_images/Platform_YouTube_Color_Original.svg",
+        "facebook_url": "https://www.facebook.com/MannishHerbiary/",
+        "facebook_icon": "shopify://shop_images/Platform_Facebook_Color_Original.svg"
+      }
+    },
     "featured_blog_fLzNpT": {
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
@@ -135,6 +154,7 @@
     "feature_cards_tdnLBW",
     "featured_collection",
     "newsletter_section_qV6iNj",
+    "social_media_section_FQPyqt",
     "featured_blog_fLzNpT"
   ]
 }
