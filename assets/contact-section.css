@@ -3,18 +3,33 @@
   padding-bottom: 40px;
 }
 
+.contact-title {
+  font-size: 32px;
+}
+
+.contact-subheading {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.contact-subheading a {
+  text-decoration: none;
+  color: #c85817;
+  cursor: pointer;
+}
+
 .contact-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
 }
 
 .contact-copy {
-  flex: 1 1 40%;
+  flex: 0.8;
 }
 
 .contact-form-container {
-  flex: 1 1 60%;
+  flex: 1;
   position: relative;
 }
 
@@ -100,7 +115,7 @@
 
 .success-heading {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 36px;
   letter-spacing: 0;
   margin: 0;
 }
@@ -114,6 +129,18 @@
 }
 
 @media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .contact-copy {
+    flex: 1;
+  }
+
+  .contact-form-container {
+    width: 100%;
+  }
+
   .form-row--two {
     display: block;
   }
