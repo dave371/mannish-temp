@@ -59,20 +59,6 @@
             </div>
           {% endif %}
 
-          <div
-            class="form-success"
-            role="status"
-            aria-live="polite"
-            aria-atomic="true"
-          >
-            {% if section.settings.success_heading %}
-              <h3 class="success-heading">{{ section.settings.success_heading }}</h3>
-            {% endif %}
-            {% if section.settings.success_subheading %}
-              <p class="success-subheading">{{ section.settings.success_subheading }}</p>
-            {% endif %}
-          </div>
-
           <div class="form-row form-row--two">
             <div class="form-field">
               <label for="ContactForm-name-{{ section.id }}">Name</label>
@@ -83,13 +69,11 @@
                 required
               >
               {% if form.errors.messages.name %}
-                <p class="field-error">{{ form.errors.messages.name }}</p>
+                <div class="contact-error-container">
+                  <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                  <p class="field-error">{{ form.errors.messages.name }}</p>
+                </div>
               {% endif %}
-
-              <div class="contact-error-container">
-                <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
-                <p class="field-error">This a dummy error</p>
-              </div>
             </div>
             <div class="form-field">
               <label for="ContactForm-email-{{ section.id }}">Email</label>
@@ -100,13 +84,11 @@
                 required
               >
               {% if form.errors.messages.email %}
-                <p class="field-error">{{ form.errors.messages.email }}</p>
+                <div class="contact-error-container">
+                  <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                  <p class="field-error">{{ form.errors.messages.email }}</p>
+                </div>
               {% endif %}
-
-              <div class="contact-error-container">
-                <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
-                <p class="field-error">This a dummy error</p>
-              </div>
             </div>
           </div>
 
@@ -129,13 +111,13 @@
               required
             ></textarea>
             {% if form.errors.messages.body %}
-              <p class="field-error">{{ form.errors.messages.body }}</p>
+              <p class="field-error">
+                <div class="contact-error-container">
+                  <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
+                  <p class="field-error">{{ form.errors.messages.body }}</p>
+                </div>
+              </p>
             {% endif %}
-
-            <div class="contact-error-container">
-              <div class="contact-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
-              <p class="field-error">This a dummy error</p>
-            </div>
           </div>
 
           <div class="form-field">
