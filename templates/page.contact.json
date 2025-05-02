@@ -23,7 +23,7 @@
       "settings": {
         "page_title": "Get in Touch",
         "success_heading": "Thank You for Reaching Out!",
-        "success_subheading": "<p>We've received your message and appreciate you contacting us. Our team will review your inquiry and respond within 24–48 hours.</p>",
+        "success_subheading": "We've received your message and appreciate you contacting us. Our team will review your inquiry and respond within 24–48 hours.",
         "border_color": "#493030",
         "border_radius": 4,
         "focus_outline_color": "#c85a17",
