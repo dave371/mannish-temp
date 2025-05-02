@@ -41,7 +41,12 @@
       <div class="contact-form-container">
         {% form 'contact', id: 'ContactForm-{{ section.id }}', class: 'contact-form' %}
           {% if form.posted_successfully? %}
-            <div class="form-success">
+            <div
+              class="form-success"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               {% if section.settings.success_heading %}
                 <h3 class="success-heading">{{ section.settings.success_heading }}</h3>
               {% endif %}
@@ -146,9 +151,7 @@
       "type": "number",
       "id": "border_radius",
       "label": "Input Border Radius (px)",
-      "default": 4,
-      "min": 0,
-      "max": 50
+      "default": 4
     },
     {
       "type": "color",
