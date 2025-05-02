@@ -1,0 +1,190 @@
+{% comment %}
+  Social Media Section
+  Left: five social icons (image + link + bg color)
+  Right: editable title & subtitle
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'social-media-section.css' | asset_url }}">
+
+<section class="socials-section page-width">
+  <div class="socials-wrapper">
+    <!-- Left: Icons Container -->
+    <div class="social-icons-container" style="background-color: {{ section.settings.icon_bg_color }};">
+      {% if section.settings.twitter_url and section.settings.twitter_icon %}
+        <a
+          href="{{ section.settings.twitter_url }}"
+          class="social-icon social-icon--twitter"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+        >
+          <img
+            src="{{ section.settings.twitter_icon | image_url: width: 50, height: 50 }}"
+            alt="Twitter icon"
+            width="50"
+            height="50"
+          >
+        </a>
+      {% endif %}
+
+      {% if section.settings.instagram_url and section.settings.instagram_icon %}
+        <a
+          href="{{ section.settings.instagram_url }}"
+          class="social-icon social-icon--instagram"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram"
+        >
+          <img
+            src="{{ section.settings.instagram_icon | image_url: width: 50, height: 50 }}"
+            alt="Instagram icon"
+            width="50"
+            height="50"
+          >
+        </a>
+      {% endif %}
+
+      {% if section.settings.tiktok_url and section.settings.tiktok_icon %}
+        <a
+          href="{{ section.settings.tiktok_url }}"
+          class="social-icon social-icon--tiktok"
+          target="_blank"
+          rel="noopener"
+          aria-label="TikTok"
+        >
+          <img
+            src="{{ section.settings.tiktok_icon | image_url: width: 50, height: 50 }}"
+            alt="TikTok icon"
+            width="50"
+            height="50"
+          >
+        </a>
+      {% endif %}
+
+      {% if section.settings.youtube_url and section.settings.youtube_icon %}
+        <a
+          href="{{ section.settings.youtube_url }}"
+          class="social-icon social-icon--youtube"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+        >
+          <img
+            src="{{ section.settings.youtube_icon | image_url: width: 50, height: 50 }}"
+            alt="YouTube icon"
+            width="50"
+            height="50"
+          >
+        </a>
+      {% endif %}
+
+      {% if section.settings.facebook_url and section.settings.facebook_icon %}
+        <a
+          href="{{ section.settings.facebook_url }}"
+          class="social-icon social-icon--facebook"
+          target="_blank"
+          rel="noopener"
+          aria-label="Facebook"
+        >
+          <img
+            src="{{ section.settings.facebook_icon | image_url: width: 50, height: 50 }}"
+            alt="Facebook icon"
+            width="50"
+            height="50"
+          >
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- Right: Text Container -->
+    <div class="social-text-container">
+      {% if section.settings.section_social_title %}
+        <h2 class="social-title">{{ section.settings.section_social_title }}</h2>
+      {% endif %}
+      {% if section.settings.section_social_subtitle %}
+        <p class="social-subtitle">{{ section.settings.section_social_subtitle }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Media Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
+      "default": "#F0F0F0"
+    },
+    {
+      "type": "text",
+      "id": "section_social_title",
+      "label": "Section Title",
+      "default": "Connect With Us"
+    },
+    {
+      "type": "textarea",
+      "id": "section_social_subtitle",
+      "label": "Section Subtitle",
+      "default": "Follow and stay in touch"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "twitter_icon",
+      "label": "Twitter Icon"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "instagram_icon",
+      "label": "Instagram Icon"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "tiktok_icon",
+      "label": "TikTok Icon"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "youtube_icon",
+      "label": "YouTube Icon"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "facebook_icon",
+      "label": "Facebook Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Media Section"
+    }
+  ]
+}
+{% endschema %}
