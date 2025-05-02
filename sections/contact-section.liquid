@@ -22,6 +22,10 @@
     background-color: {{ section.settings.border_color }};
     border-radius: {{ section.settings.border_radius }}px;
   }
+
+  .contact-submit:hover {
+   background-color: {{ section.settings.btn_hover }}
+  }
 {% endstyle %}
 
 <section class="contact-section">
@@ -173,6 +177,11 @@
       "type": "text",
       "id": "brand_email",
       "label": "Contact Email"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover",
+      "label": "Button Hover Color"
     }
   ],
   "presets": [
