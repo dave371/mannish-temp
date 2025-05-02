@@ -1,0 +1,53 @@
+.contact-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-copy {
+  flex: 1 1 40%;
+}
+
+.contact-form-container {
+  flex: 1 1 60%;
+}
+
+.form-row--two {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.contact-form textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.field-error {
+  color: #f00;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.contact-submit {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form-row--two {
+    display: block;
+  }
+}

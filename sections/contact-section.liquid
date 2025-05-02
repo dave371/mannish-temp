@@ -1,0 +1,166 @@
+{% comment %}
+  Contact Section
+  Title, subheading, and contact form with always-rendered inputs
+  and conditional confirmation message.
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'contact-section.css' | asset_url }}">
+
+{% style %}
+  .contact-form input,
+  .contact-form textarea {
+    border: 2px solid {{ section.settings.border_color }};
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid {{ section.settings.focus_outline_color }};
+  }
+
+  .contact-submit {
+    background-color: {{ section.settings.border_color }};
+    border-radius: {{ section.settings.border_radius }}px;
+  }
+{% endstyle %}
+
+<section class="contact-section">
+  <div class="page-width">
+    <div class="contact-wrapper">
+      <!-- Copy Column -->
+      <div class="contact-copy">
+        {% if section.settings.page_title %}
+          <h2 class="contact-title">{{ section.settings.page_title }}</h2>
+        {% endif %}
+        {% if section.settings.page_subheading %}
+          <p class="contact-subheading">{{ section.settings.page_subheading }}</p>
+        {% endif %}
+      </div>
+
+      <!-- Form Column -->
+      <div class="contact-form-container">
+        {% form 'contact', id: 'ContactForm-{{ section.id }}', class: 'contact-form' %}
+          {% if form.posted_successfully? %}
+            <div class="form-success">
+              {% if section.settings.success_heading %}
+                <h3 class="success-heading">{{ section.settings.success_heading }}</h3>
+              {% endif %}
+              {% if section.settings.success_subheading %}
+                <p class="success-subheading">{{ section.settings.success_subheading }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class="form-row form-row--two">
+            <div class="form-field">
+              <label for="ContactForm-name-{{ section.id }}">Name</label>
+              <input
+                type="text"
+                id="ContactForm-name-{{ section.id }}"
+                name="contact[name]"
+                required
+              >
+              {% if form.errors.messages.name %}
+                <p class="field-error">{{ form.errors.messages.name }}</p>
+              {% endif %}
+            </div>
+            <div class="form-field">
+              <label for="ContactForm-email-{{ section.id }}">Email</label>
+              <input
+                type="email"
+                id="ContactForm-email-{{ section.id }}"
+                name="contact[email]"
+                required
+              >
+              {% if form.errors.messages.email %}
+                <p class="field-error">{{ form.errors.messages.email }}</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="ContactForm-phone-{{ section.id }}">Phone</label>
+            <input
+              type="tel"
+              id="ContactForm-phone-{{ section.id }}"
+              name="contact[phone]"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="ContactForm-comments-{{ section.id }}">Comments</label>
+            <textarea
+              id="ContactForm-comments-{{ section.id }}"
+              name="contact[body]"
+              required
+            ></textarea>
+            {% if form.errors.messages.body %}
+              <p class="field-error">{{ form.errors.messages.body }}</p>
+            {% endif %}
+          </div>
+
+          <div class="form-field">
+            <button type="submit" class="contact-submit">Submit</button>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Get in Touch"
+    },
+    {
+      "type": "textarea",
+      "id": "page_subheading",
+      "label": "Page Subheading",
+      "default": "We’d love to hear from you."
+    },
+    {
+      "type": "text",
+      "id": "success_heading",
+      "label": "Success Message Heading",
+      "default": "Thank you!"
+    },
+    {
+      "type": "textarea",
+      "id": "success_subheading",
+      "label": "Success Message Subheading",
+      "default": "We have received your message."
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Input Border Color",
+      "default": "#493030"
+    },
+    {
+      "type": "number",
+      "id": "border_radius",
+      "label": "Input Border Radius (px)",
+      "default": 4,
+      "min": 0,
+      "max": 50
+    },
+    {
+      "type": "color",
+      "id": "focus_outline_color",
+      "label": "Focus Outline Color",
+      "default": "#C85A17"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Section"
+    }
+  ]
+}
+{% endschema %}
