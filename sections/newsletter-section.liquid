@@ -19,27 +19,22 @@
 
       {% form 'customer' %}
         {% if form.posted_successfully? %}
-          {% if section.settings.confirmation_message != blank %}
-            <p class="newsletter-confirmation">{{ section.settings.confirmation_message }}</p>
-          {% else %}
-            <p class="newsletter-confirmation">{{ 'general.newsletter_form.confirmation' | t }}</p>
-          {% endif %}
-        {% else %}
-          {{ form.errors | default_errors }}
-          <input type="hidden" name="contact[tags]" value="newsletter">
-          <label for="newsletter-email-{{ section.id }}" class="visually-hidden">Email address</label>
-          <input
-            type="email"
-            name="contact[email]"
-            id="newsletter-email-{{ section.id }}"
-            class="newsletter-input"
-            placeholder="{{ section.settings.email_placeholder }}"
-            required
-          >
-          <button type="submit" class="newsletter-button">
-            {{ section.settings.button_text }}
-          </button>
+          <h3>Form has been posted!</h3>
         {% endif %}
+
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label for="newsletter-email-{{ section.id }}" class="visually-hidden">Email address</label>
+        <input
+          type="email"
+          name="contact[email]"
+          id="newsletter-email-{{ section.id }}"
+          class="newsletter-input"
+          placeholder="{{ section.settings.email_placeholder }}"
+          required
+        >
+        <button type="submit" class="newsletter-button">
+          {{ section.settings.button_text }}
+        </button>
       {% endform %}
     </div>
 
