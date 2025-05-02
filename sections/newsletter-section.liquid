@@ -17,9 +17,12 @@
         <p class="newsletter-subheading">{{ section.settings.subheading }}</p>
       {% endif %}
 
-      {% form 'customer' %}
+      {% form 'customer', class: 'news-email-form' %}
         {% if form.posted_successfully? %}
-          <h3>Form has been posted!</h3>
+          <div class="new-email-confirmation">
+            <h3>You're In! Welcome to the Mannish Herbiary community.</h3>
+            <p>Thank you for subscribing! We're excited to have you on board.​</p>
+          </div>
         {% endif %}
 
         <input type="hidden" name="contact[tags]" value="newsletter">
@@ -32,9 +35,12 @@
           placeholder="{{ section.settings.email_placeholder }}"
           required
         >
+
         {% if form.errors %}
-          <span>{{ form.errors.messages.email }}</span>
-          <span>test</span>
+          <div class="news-error-container">
+            <div class="email-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
+            <span class="email-error-message">There was an error with the email</span>
+          </div>
         {% endif %}
 
         <button type="submit" class="newsletter-button">
