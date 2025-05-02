@@ -63,14 +63,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-weight: 500;
     }
 
     .c-hero-button.primary {
       background-color: {{ section.settings.primary_button }};
     }
 
+    .c-hero-button.primary:hover {
+      background-color: #58742A;
+    }
+
     .c-hero-button.secondary {
       background-color: {{ section.settings.secondary_button }};
+    }
+
+    .c-hero-button.secondary:hover {
+      background-color: #E66A1C;
     }
 
     @media (max-width: 769px) {

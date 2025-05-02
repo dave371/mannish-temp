@@ -59,6 +59,10 @@
   font-family: 'Satoshi', sans-serif;
 }
 
+.newsletter-button:hover {
+  background-color: #e66a1c;
+}
+
 .newsletter-input:focus,
 .newsletter-button:focus {
   outline: 2px solid #c85a17;
