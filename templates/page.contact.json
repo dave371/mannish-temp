@@ -27,7 +27,8 @@
         "border_color": "#493030",
         "border_radius": 4,
         "focus_outline_color": "#c85a17",
-        "brand_email": "testingmannish@gmail.com"
+        "brand_email": "testingmannish@gmail.com",
+        "btn_hover": "#654040"
       }
     }
   },
