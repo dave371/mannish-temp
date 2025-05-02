@@ -22,12 +22,12 @@
       "name": "Contact Section",
       "settings": {
         "page_title": "Get in Touch",
-        "page_subheading": "We’d love to hear from you.",
+        "page_subheading": "Have questions, feedback, or just want to say hello? We're here to help and would love to hear from you.\n\nPlease fill out the form below, and we'll get back to you as soon as possible.",
         "success_heading": "Thank you!",
-        "success_subheading": "We have received your message.",
+        "success_subheading": "<p>We have received your message.</p>",
         "border_color": "#493030",
         "border_radius": 4,
-        "focus_outline_color": "#C85A17"
+        "focus_outline_color": "#c85a17"
       }
     }
   },
