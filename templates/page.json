@@ -65,9 +65,13 @@
       ],
       "name": "FAQ Section",
       "settings": {
-        "icon_chevron": "shopify://shop_images/chevron-down.svg",
         "title": "Frequently Asked Questions",
-        "subheading": "Here are answers to our most common questions."
+        "subheading": "Here are answers to our most common questions.",
+        "icon_chevron": "shopify://shop_images/chevron-down_1.svg",
+        "question_bg_color": "#493030",
+        "question_text_color": "#ffffff",
+        "answer_bg_color": "#ffffff",
+        "answer_text_color": "#555555"
       }
     }
   },
