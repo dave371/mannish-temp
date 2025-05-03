@@ -65,6 +65,7 @@
       ],
       "name": "FAQ Section",
       "settings": {
+        "icon_chevron": "shopify://shop_images/chevron-down.svg",
         "title": "Frequently Asked Questions",
         "subheading": "Here are answers to our most common questions."
       }
