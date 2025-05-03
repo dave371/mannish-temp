@@ -1,0 +1,86 @@
+{% comment %}
+  FAQ Section
+  Part 1: editable title & subheading
+  Part 2: dynamic FAQ blocks rendered as <details> accordions
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'faq-section.css' | asset_url }}">
+
+<section class="faq-section">
+  <div class="page-width">
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="faq-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="faq-subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="faq-container">
+      {% for block in section.blocks %}
+        <details class="faq-item" name="faq-group">
+          <summary class="faq-question">
+            {{ block.settings.question }}
+            <span class="faq-icon">
+              <!-- Placeholder for arrow SVG; replace with your SVG later -->
+              <svg width="24" height="24" role="img" aria-hidden="true">
+                <use xlink:href="#icon-arrow-down"></use>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "Here are answers to our most common questions."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question & Answer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your return policy?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "You can return any unused items within 30 days for a full refund."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Pages"
+    }
+  ]
+}
+{% endschema %}
