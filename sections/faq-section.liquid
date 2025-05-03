@@ -2,40 +2,65 @@
   FAQ Section
   Part 1: editable title & subheading
   Part 2: dynamic FAQ blocks rendered as <details> accordions
+  New: one image_picker setting for the dropdown chevron icon
+  Layout: copy and FAQ side-by-side on desktop, stacked on mobile
 {% endcomment %}
 
 <link rel="stylesheet" href="{{ 'faq-section.css' | asset_url }}">
 
 <section class="faq-section">
   <div class="page-width">
+    {% style %}
+      .faq-wrapper {
+        display: flex;
+        gap: 32px;
+      }
+      @media (max-width: 768px) {
+        .faq-wrapper {
+          flex-direction: column;
+        }
+      }
+    {% endstyle %}
 
-    {%- if section.settings.title != blank -%}
-      <h2 class="faq-title">{{ section.settings.title }}</h2>
-    {%- endif -%}
+    <div class="faq-wrapper">
+      <!-- Copy Column -->
+      <div class="faq-copy">
+        {% if section.settings.title != blank %}
+          <h2 class="faq-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="faq-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+      </div>
 
-    {%- if section.settings.subheading != blank -%}
-      <p class="faq-subheading">{{ section.settings.subheading }}</p>
-    {%- endif -%}
-
-    <div class="faq-container">
-      {% for block in section.blocks %}
-        <details class="faq-item" name="faq-group">
-          <summary class="faq-question">
-            {{ block.settings.question }}
-            <span class="faq-icon">
-              <!-- Placeholder for arrow SVG; replace with your SVG later -->
-              <svg width="24" height="24" role="img" aria-hidden="true">
-                <use xlink:href="#icon-arrow-down"></use>
-              </svg>
-            </span>
-          </summary>
-          <div class="faq-answer">
-            {{ block.settings.answer }}
-          </div>
-        </details>
-      {% endfor %}
+      <!-- FAQ Column -->
+      <div class="faq-container">
+        {% for block in section.blocks %}
+          <details class="faq-item">
+            <summary class="faq-question">
+              {{ block.settings.question }}
+              {% if section.settings.icon_chevron %}
+                <img
+                  class="faq-icon"
+                  src="{{ section.settings.icon_chevron | image_url: width:24, height:24 }}"
+                  alt="Toggle answer"
+                  width="24"
+                  height="24"
+                >
+              {% else %}
+                <!-- fallback SVG here -->
+                <svg class="faq-icon" width="24" height="24" aria-hidden="true">
+                  <use xlink:href="#icon-arrow-down"></use>
+                </svg>
+              {% endif %}
+            </summary>
+            <div class="faq-answer">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        {% endfor %}
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -43,6 +68,11 @@
 {
   "name": "FAQ Section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon_chevron",
+      "label": "Chevron Icon (applies to all questions)"
+    },
     {
       "type": "text",
       "id": "title",
