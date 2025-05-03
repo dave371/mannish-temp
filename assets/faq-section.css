@@ -9,11 +9,16 @@
 /* Titles */
 .faq-title {
   font-size: 32px;
+  margin: 0;
   margin-bottom: 16px;
+  letter-spacing: 0;
+  font-weight: 500;
 }
 .faq-subheading {
-  font-size: 16px;
-  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  color: #292929;
 }
 
 /* FAQ container & layout */
