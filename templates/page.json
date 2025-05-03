@@ -65,8 +65,8 @@
       ],
       "name": "FAQ Section",
       "settings": {
-        "title": "Frequently Asked Questions",
-        "subheading": "Here are answers to our most common questions.",
+        "title": "Your Questions, Answered",
+        "subheading": "Welcome to our FAQ section, where we address common inquiries about our products, services, and wellness resources.",
         "icon_chevron": "shopify://shop_images/chevron-down_1.svg",
         "question_bg_color": "#493030",
         "question_text_color": "#ffffff",
