@@ -1,34 +1,58 @@
 {% comment %}
   FAQ Section
-  Part 1: editable title & subheading
-  Part 2: dynamic FAQ blocks rendered as <details> accordions
-  New: one image_picker setting for the dropdown chevron icon
-  Layout: copy and FAQ side-by-side on desktop, stacked on mobile
+  - Editable title & subtitle
+  - Dynamic FAQ blocks via <details>/<summary>
+  - Single chevron icon, global Q/A colors
+  - Responsive two-column layout
+  - No custom slide animations
 {% endcomment %}
 
 <link rel="stylesheet" href="{{ 'faq-section.css' | asset_url }}">
 
+{% style %}
+  /* Layout: two columns on desktop, stacked on mobile */
+  .faq-wrapper {
+    display: flex;
+    gap: 32px;
+  }
+  @media (max-width: 768px) {
+    .faq-wrapper {
+      flex-direction: column;
+    }
+  }
+  .faq-copy,
+  .faq-container {
+    flex: 1;
+  }
+
+  /* Global Question & Answer colors */
+  .faq-question {
+    background-color: {{ section.settings.question_bg_color }};
+    color: {{ section.settings.question_text_color }};
+  }
+  .faq-answer {
+    background-color: {{ section.settings.answer_bg_color }};
+    color: {{ section.settings.answer_text_color }};
+  }
+
+  /* Chevron rotation */
+  .faq-icon {
+    transition: transform 0.3s ease;
+  }
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+{% endstyle %}
+
 <section class="faq-section">
   <div class="page-width">
-    {% style %}
-      .faq-wrapper {
-        display: flex;
-        gap: 32px;
-      }
-      @media (max-width: 768px) {
-        .faq-wrapper {
-          flex-direction: column;
-        }
-      }
-    {% endstyle %}
-
     <div class="faq-wrapper">
       <!-- Copy Column -->
       <div class="faq-copy">
-        {% if section.settings.title != blank %}
+        {% if section.settings.title %}
           <h2 class="faq-title">{{ section.settings.title }}</h2>
         {% endif %}
-        {% if section.settings.subheading != blank %}
+        {% if section.settings.subheading %}
           <p class="faq-subheading">{{ section.settings.subheading }}</p>
         {% endif %}
       </div>
@@ -36,7 +60,7 @@
       <!-- FAQ Column -->
       <div class="faq-container">
         {% for block in section.blocks %}
-          <details class="faq-item">
+          <details class="faq-item" name="faq">
             <summary class="faq-question">
               {{ block.settings.question }}
               {% if section.settings.icon_chevron %}
@@ -47,11 +71,6 @@
                   width="24"
                   height="24"
                 >
-              {% else %}
-                <!-- fallback SVG here -->
-                <svg class="faq-icon" width="24" height="24" aria-hidden="true">
-                  <use xlink:href="#icon-arrow-down"></use>
-                </svg>
               {% endif %}
             </summary>
             <div class="faq-answer">
@@ -68,35 +87,25 @@
 {
   "name": "FAQ Section",
   "settings": [
-    {
-      "type": "image_picker",
-      "id": "icon_chevron",
-      "label": "Chevron Icon (applies to all questions)"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Frequently Asked Questions"
-    },
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Frequently Asked Questions" },
     {
       "type": "textarea",
       "id": "subheading",
       "label": "Section Subheading",
       "default": "Here are answers to our most common questions."
-    }
+    },
+    { "type": "image_picker", "id": "icon_chevron", "label": "Chevron Icon" },
+    { "type": "color", "id": "question_bg_color", "label": "Question Background Color", "default": "#f7f7f7" },
+    { "type": "color", "id": "question_text_color", "label": "Question Text Color", "default": "#333333" },
+    { "type": "color", "id": "answer_bg_color", "label": "Answer Background Color", "default": "#ffffff" },
+    { "type": "color", "id": "answer_text_color", "label": "Answer Text Color", "default": "#555555" }
   ],
   "blocks": [
     {
       "type": "faq",
       "name": "Question & Answer",
       "settings": [
-        {
-          "type": "text",
-          "id": "question",
-          "label": "Question",
-          "default": "What is your return policy?"
-        },
+        { "type": "text", "id": "question", "label": "Question", "default": "What is your return policy?" },
         {
           "type": "textarea",
           "id": "answer",
@@ -106,11 +115,6 @@
       ]
     }
   ],
-  "presets": [
-    {
-      "name": "FAQ Section",
-      "category": "Pages"
-    }
-  ]
+  "presets": [{ "name": "FAQ Section", "category": "Pages" }]
 }
 {% endschema %}

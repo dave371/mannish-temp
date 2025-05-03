@@ -4,7 +4,7 @@
   padding-bottom: 40px;
 }
 
-/* Title & subheading */
+/* Titles */
 .faq-title {
   font-size: 32px;
   margin-bottom: 16px;
@@ -14,16 +14,11 @@
   margin-bottom: 24px;
 }
 
-.faq-copy {
-  flex: 1;
-}
-
-/* Container for items */
+/* FAQ container & layout */
 .faq-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex: 1;
 }
 
 /* Accordion item */
@@ -41,39 +36,21 @@
   padding: 16px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #f7f7f7;
   user-select: none;
+  /* Native <details> handles open/close instantly */
 }
 
-/* Answer panel (hidden) */
+/* Answer panel (native toggle) */
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 16px;
+  padding: 0 16px 16px; /* always visible when open */
   font-size: 14px;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  will-change: max-height, padding;
 }
 
-/* When open: reveal answer */
-.faq-item[open] .faq-answer {
-  max-height: 500px; /* enough for most answers */
-  padding: 16px;
-}
-
-/* Chevron icon transition */
-.faq-icon {
-  transition: transform 0.4s ease;
-  flex-shrink: 0;
-}
-
-/* Rotate when open */
-.faq-item[open] .faq-icon {
-  transform: rotate(180deg);
-}
-
-/* Responsive font adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
+  .faq-wrapper {
+    flex-direction: column;
+  }
   .faq-title {
     font-size: 28px;
   }
