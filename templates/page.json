@@ -26,10 +26,42 @@
             "question": "What is your return policy?",
             "answer": "You can return any unused items within 30 days for a full refund."
           }
+        },
+        "faq_rxBq33": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "You can return any unused items within 30 days for a full refund."
+          }
+        },
+        "faq_7ExePg": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "You can return any unused items within 30 days for a full refund."
+          }
+        },
+        "faq_mXhVGq": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "You can return any unused items within 30 days for a full refund."
+          }
+        },
+        "faq_HkTffe": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "You can return any unused items within 30 days for a full refund."
+          }
         }
       },
       "block_order": [
-        "faq_ykymgN"
+        "faq_ykymgN",
+        "faq_rxBq33",
+        "faq_7ExePg",
+        "faq_mXhVGq",
+        "faq_HkTffe"
       ],
       "name": "FAQ Section",
       "settings": {
