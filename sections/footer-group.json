@@ -13,6 +13,28 @@
   "sections": {
     "footer_section_qtyR4F": {
       "type": "footer-section",
+      "blocks": {
+        "social_8Jiffb": {
+          "type": "social",
+          "settings": {
+            "name": "facebook",
+            "url": "https://www.facebook.com/MannishHerbiary/",
+            "icon": "shopify://shop_images/Platform_Facebook_Color_Original.svg"
+          }
+        },
+        "social_fEg4yU": {
+          "type": "social",
+          "settings": {
+            "name": "instagram",
+            "url": "https://instagram.com/mannishherbiary",
+            "icon": "shopify://shop_images/Group_1.svg"
+          }
+        }
+      },
+      "block_order": [
+        "social_8Jiffb",
+        "social_fEg4yU"
+      ],
       "name": "Footer Section",
       "settings": {
         "logo": "shopify://shop_images/mannish.png",
