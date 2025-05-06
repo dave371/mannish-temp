@@ -29,11 +29,20 @@
             "url": "https://instagram.com/mannishherbiary",
             "icon": "shopify://shop_images/Group_1.svg"
           }
+        },
+        "social_9HMBjx": {
+          "type": "social",
+          "settings": {
+            "name": "twitter",
+            "url": "https://twitter.com/MannishHerbiary",
+            "icon": "shopify://shop_images/Platform_X_Twitter_Color_Original.svg"
+          }
         }
       },
       "block_order": [
         "social_8Jiffb",
-        "social_fEg4yU"
+        "social_fEg4yU",
+        "social_9HMBjx"
       ],
       "name": "Footer Section",
       "settings": {
