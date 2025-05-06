@@ -18,9 +18,9 @@
 {% endstyle %}
 
 <section class="footer-section">
-  <div class="footer-wrapper">
+  <div class="footer-wrapper page-width">
     <!-- Column 1: Company Info -->
-    <div class="footer-col footer-col--info">
+    <div class="footer-company-info">
       {% if section.settings.logo %}
         <img src="{{ section.settings.logo | image_url: width:150 }}" alt="Logo" class="footer-logo">
       {% endif %}
@@ -38,38 +38,40 @@
       </div>
     </div>
 
-    <!-- Columns 2–n: Nav Groups -->
-    {% for block in section.blocks %}
-      {% if block.type == 'nav_group' %}
-        <div class="footer-col footer-col--nav">
-          <h4 class="footer-nav-title">{{ block.settings.title }}</h4>
-          <ul class="footer-nav-list">
-            {% assign menu = linklists[block.settings.menu] %}
-            {% for link in menu.links %}
-              <li>
-                <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
-    {% endfor %}
-
-    <!-- Last Column: Newsletter -->
-    <div class="footer-col footer-col--newsletter">
-      <h4 class="footer-nav-title">{{ section.settings.newsletter_heading }}</h4>
-      {% form 'customer', id: 'FooterNewsletter', class: 'footer-newsletter-form' %}
-        <input
-          type="email"
-          name="customer[email]"
-          placeholder="{{ section.settings.newsletter_placeholder }}"
-          required
-          class="footer-newsletter-input"
-        >
-        <button type="submit" class="footer-newsletter-button">
-          {{ section.settings.newsletter_button_text }}
-        </button>
-      {% endform %}
+    <div class="nav-news-format">
+      <div class="footer-nav-groups">
+        {% for block in section.blocks %}
+          {% if block.type == 'nav_group' %}
+            <div class="footer-nav-group">
+              <h4 class="footer-nav-title">{{ block.settings.title }}</h4>
+              <ul class="footer-nav-list">
+                {% assign menu = linklists[block.settings.menu] %}
+                {% for link in menu.links %}
+                  <li>
+                    <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- Last Column: Newsletter -->
+      <div class="footer-newsletter">
+        <h4 class="footer-nav-title">{{ section.settings.newsletter_heading }}</h4>
+        {% form 'customer', class: 'footer-newsletter-form' %}
+          <input
+            type="email"
+            name="customer[email]"
+            placeholder="{{ section.settings.newsletter_placeholder }}"
+            required
+            class="footer-newsletter-input"
+          >
+          <button type="submit" class="footer-newsletter-button">
+            {{ section.settings.newsletter_button_text }}
+          </button>
+        {% endform %}
+      </div>
     </div>
   </div>
 </section>
