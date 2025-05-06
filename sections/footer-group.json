@@ -53,6 +53,34 @@
             "url": "http://www.tiktok.com/@mannishherbiary",
             "icon": "shopify://shop_images/Platform_TikTok_Color_Original.svg"
           }
+        },
+        "nav_group_EX96Er": {
+          "type": "nav_group",
+          "settings": {
+            "title": "Shop",
+            "menu": "footer-shop"
+          }
+        },
+        "nav_group_JRkaht": {
+          "type": "nav_group",
+          "settings": {
+            "title": "Customer Service",
+            "menu": "footer-customer"
+          }
+        },
+        "nav_group_tdUPaF": {
+          "type": "nav_group",
+          "settings": {
+            "title": "Pages",
+            "menu": "footer-site"
+          }
+        },
+        "nav_group_myqBwE": {
+          "type": "nav_group",
+          "settings": {
+            "title": "Legal",
+            "menu": "footer-legal"
+          }
         }
       },
       "block_order": [
@@ -60,7 +88,11 @@
         "social_fEg4yU",
         "social_9HMBjx",
         "social_pctQFp",
-        "social_HVKfjk"
+        "social_HVKfjk",
+        "nav_group_EX96Er",
+        "nav_group_JRkaht",
+        "nav_group_tdUPaF",
+        "nav_group_myqBwE"
       ],
       "name": "Footer Section",
       "settings": {
