@@ -45,13 +45,22 @@
             "url": "https://www.youtube.com/@MannishHerbiary",
             "icon": "shopify://shop_images/Platform_YouTube_Color_Original.svg"
           }
+        },
+        "social_HVKfjk": {
+          "type": "social",
+          "settings": {
+            "name": "tiktok",
+            "url": "http://www.tiktok.com/@mannishherbiary",
+            "icon": "shopify://shop_images/Platform_TikTok_Color_Original.svg"
+          }
         }
       },
       "block_order": [
         "social_8Jiffb",
         "social_fEg4yU",
         "social_9HMBjx",
-        "social_pctQFp"
+        "social_pctQFp",
+        "social_HVKfjk"
       ],
       "name": "Footer Section",
       "settings": {
