@@ -15,7 +15,8 @@
       "type": "footer-section",
       "name": "Footer Section",
       "settings": {
-        "email": ""
+        "logo": "shopify://shop_images/mannish.png",
+        "email": "testingmannish@gmail.com"
       }
     },
     "custom_footer_7i63kV": {
