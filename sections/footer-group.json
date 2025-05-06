@@ -97,7 +97,12 @@
       "name": "Footer Section",
       "settings": {
         "logo": "shopify://shop_images/mannish.png",
-        "email": "testingmannish@gmail.com"
+        "email": "testingmannish@gmail.com",
+        "background_color": "#292929",
+        "text_color": "#ffffff",
+        "newsletter_heading": "Stay In Touch",
+        "newsletter_placeholder": "Your email address",
+        "newsletter_button_text": "Subscribe"
       }
     },
     "custom_footer_7i63kV": {
