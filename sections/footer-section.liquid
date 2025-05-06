@@ -1,0 +1,139 @@
+{% comment %}
+  Footer Section
+  - 4 columns on desktop, collapsing to fewer on tablet/mobile
+  - Col 1: logo, email, social-links (blocks)
+  - Col 2: “Shop” & “Customer” menus (Footer-Shop, Footer-Customer)
+  - Col 3: “Legal” & “Site” menus (Footer-Legal, Footer-Site)
+  - Col 4: Newsletter signup
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'footer-section.css' | asset_url }}">
+
+<section class="footer-section">
+  <div class="footer-wrapper page-width">
+    <!-- Column 1: Company Info -->
+    <div class="footer-column footer-column--info">
+      {% if section.settings.logo %}
+        <img src="{{ section.settings.logo | image_url: width:150 }}" alt="Company logo" class="footer-logo">
+      {% endif %}
+      {% if section.settings.email %}
+        <a href="mailto:{{ section.settings.email }}" class="footer-email">{{ section.settings.email }}</a>
+      {% endif %}
+      <div class="footer-social-links">
+        {% for block in section.blocks %}
+          {% if block.type == 'social' %}
+            <a href="{{ block.settings.url }}" target="_blank" class="footer-social-link">
+              <img src="{{ block.settings.icon | image_url: width:24, height:24 }}" alt="{{ block.settings.name }}">
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Column 2: Shop & Customer -->
+    <div class="footer-column footer-column--nav">
+      <div class="footer-nav-group">
+        <h4 class="footer-nav-title">Shop</h4>
+        <ul class="footer-nav-list">
+          {% for link in linklists['footer-shop'].links %}
+            <li>
+              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-nav-group">
+        <h4 class="footer-nav-title">Customer</h4>
+        <ul class="footer-nav-list">
+          {% for link in linklists['footer-customer'].links %}
+            <li>
+              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Column 3: Legal & Site -->
+    <div class="footer-column footer-column--nav">
+      <div class="footer-nav-group">
+        <h4 class="footer-nav-title">Legal</h4>
+        <ul class="footer-nav-list">
+          {% for link in linklists['footer-legal'].links %}
+            <li>
+              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-nav-group">
+        <h4 class="footer-nav-title">Site</h4>
+        <ul class="footer-nav-list">
+          {% for link in linklists['footer-site'].links %}
+            <li>
+              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Column 4: Newsletter -->
+    <div class="footer-column footer-column--newsletter">
+      <h4 class="footer-newsletter-title">Stay In Touch</h4>
+      {% form 'customer', id: 'FooterNewsletter', class: 'footer-newsletter-form' %}
+        <div class="footer-newsletter-field">
+          <input type="email" name="customer[email]" placeholder="Your email" required>
+        </div>
+        <button type="submit" class="footer-newsletter-button">Subscribe</button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Footer Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Contact Email"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Platform Name"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Profile URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Footer Section"
+    }
+  ]
+}
+{% endschema %}
