@@ -1,11 +1,5 @@
 {% comment %}
   Footer Section
-  - Col 1: Logo, email, social links (blocks)
-  - Col 2+: Nav groups (blocks)
-  - Last: Newsletter
-  - Dynamic nav-group blocks
-  - Responsive: 4 / 2 / 1 columns
-  - Footer bg & text color settings
 {% endcomment %}
 
 <link rel="stylesheet" href="{{ 'footer-section.css' | asset_url }}">
@@ -27,6 +21,10 @@
   .footer-newsletter-button {
     background-color: {{ section.settings.news_btn_color }};
     color: {{ section.settings.news_btn_text_color }};
+  }
+
+  .footer-news-confirm {
+    background-color: {{ section.settings.news_input_color }};
   }
 {% endstyle %}
 
@@ -73,6 +71,12 @@
       <div class="footer-newsletter">
         <h4 class="footer-nav-title">{{ section.settings.newsletter_heading }}</h4>
         {% form 'customer', class: 'footer-newsletter-form' %}
+          {% if form.posted_successfully? %}
+            <div class="footer-news-confirm">
+              <h3>Thank You!</h3>
+            </div>
+          {% endif %}
+
           <input
             type="email"
             name="customer[email]"
@@ -80,6 +84,14 @@
             required
             class="footer-newsletter-input"
           >
+
+          {% if form.errors %}
+            <div class="footer-news-error-container">
+              <div class="footer-email-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
+              <span class="footer-email-error">{{ form.errors.messages.email }}</span>
+            </div>
+          {% endif %}
+
           <button type="submit" class="footer-newsletter-button">
             {{ section.settings.newsletter_button_text }}
           </button>

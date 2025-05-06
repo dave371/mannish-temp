@@ -48,7 +48,7 @@
         {% if form.errors %}
           <div class="news-error-container">
             <div class="email-error-icon">{{- 'error-field.svg' | inline_asset_content -}}</div>
-            <span class="email-error-message">There was an error with the email</span>
+            <span class="email-error-message">{{ form.errors.messages.email }}</span>
           </div>
         {% endif %}
 
