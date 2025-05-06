@@ -15,6 +15,19 @@
     background-color: {{ section.settings.background_color }};
     color: {{ section.settings.text_color }};
   }
+
+  .footer-nav-title {
+    color: {{ section.settings.text_color }};
+  }
+
+  .footer-newsletter-input {
+    background-color: {{ section.settings.news_input_color }};
+  }
+
+  .footer-newsletter-button {
+    background-color: {{ section.settings.news_btn_color }};
+    color: {{ section.settings.news_btn_text_color }};
+  }
 {% endstyle %}
 
 <section class="footer-section">
@@ -119,6 +132,21 @@
       "id": "newsletter_button_text",
       "label": "Newsletter Button Text",
       "default": "Subscribe"
+    },
+    {
+      "type": "color",
+      "id": "news_input_color",
+      "label": "Newsletter Input Background Color"
+    },
+    {
+      "type": "color",
+      "id": "news_btn_color",
+      "label": "Newsletter Button Color"
+    },
+    {
+      "type": "color",
+      "id": "news_btn_text_color",
+      "label": "Newsletter Button Text Color"
     }
   ],
   "blocks": [
