@@ -1,28 +1,36 @@
 {% comment %}
   Footer Section
-  - 4 columns on desktop, collapsing to fewer on tablet/mobile
-  - Col 1: logo, email, social-links (blocks)
-  - Col 2: “Shop” & “Customer” menus (Footer-Shop, Footer-Customer)
-  - Col 3: “Legal” & “Site” menus (Footer-Legal, Footer-Site)
-  - Col 4: Newsletter signup
+  - Col 1: Logo, email, social links (blocks)
+  - Col 2+: Nav groups (blocks)
+  - Last: Newsletter
+  - Dynamic nav-group blocks
+  - Responsive: 4 / 2 / 1 columns
+  - Footer bg & text color settings
 {% endcomment %}
 
 <link rel="stylesheet" href="{{ 'footer-section.css' | asset_url }}">
 
+{% style %}
+  .footer-section {
+    background-color: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+  }
+{% endstyle %}
+
 <section class="footer-section">
-  <div class="footer-wrapper page-width">
+  <div class="footer-wrapper">
     <!-- Column 1: Company Info -->
-    <div class="footer-column footer-column--info">
+    <div class="footer-col footer-col--info">
       {% if section.settings.logo %}
-        <img src="{{ section.settings.logo | image_url: width:150 }}" alt="Company logo" class="footer-logo">
+        <img src="{{ section.settings.logo | image_url: width:150 }}" alt="Logo" class="footer-logo">
       {% endif %}
       {% if section.settings.email %}
         <a href="mailto:{{ section.settings.email }}" class="footer-email">{{ section.settings.email }}</a>
       {% endif %}
-      <div class="footer-social-links">
+      <div class="footer-social">
         {% for block in section.blocks %}
           {% if block.type == 'social' %}
-            <a href="{{ block.settings.url }}" target="_blank" class="footer-social-link">
+            <a href="{{ block.settings.url }}" class="footer-social-link" target="_blank">
               <img src="{{ block.settings.icon | image_url: width:24, height:24 }}" alt="{{ block.settings.name }}">
             </a>
           {% endif %}
@@ -30,62 +38,37 @@
       </div>
     </div>
 
-    <!-- Column 2: Shop & Customer -->
-    <div class="footer-column footer-column--nav">
-      <div class="footer-nav-group">
-        <h4 class="footer-nav-title">Shop</h4>
-        <ul class="footer-nav-list">
-          {% for link in linklists['footer-shop'].links %}
-            <li>
-              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="footer-nav-group">
-        <h4 class="footer-nav-title">Customer</h4>
-        <ul class="footer-nav-list">
-          {% for link in linklists['footer-customer'].links %}
-            <li>
-              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Column 3: Legal & Site -->
-    <div class="footer-column footer-column--nav">
-      <div class="footer-nav-group">
-        <h4 class="footer-nav-title">Legal</h4>
-        <ul class="footer-nav-list">
-          {% for link in linklists['footer-legal'].links %}
-            <li>
-              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="footer-nav-group">
-        <h4 class="footer-nav-title">Site</h4>
-        <ul class="footer-nav-list">
-          {% for link in linklists['footer-site'].links %}
-            <li>
-              <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Column 4: Newsletter -->
-    <div class="footer-column footer-column--newsletter">
-      <h4 class="footer-newsletter-title">Stay In Touch</h4>
-      {% form 'customer', id: 'FooterNewsletter', class: 'footer-newsletter-form' %}
-        <div class="footer-newsletter-field">
-          <input type="email" name="customer[email]" placeholder="Your email" required>
+    <!-- Columns 2–n: Nav Groups -->
+    {% for block in section.blocks %}
+      {% if block.type == 'nav_group' %}
+        <div class="footer-col footer-col--nav">
+          <h4 class="footer-nav-title">{{ block.settings.title }}</h4>
+          <ul class="footer-nav-list">
+            {% assign menu = linklists[block.settings.menu] %}
+            {% for link in menu.links %}
+              <li>
+                <a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-        <button type="submit" class="footer-newsletter-button">Subscribe</button>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Last Column: Newsletter -->
+    <div class="footer-col footer-col--newsletter">
+      <h4 class="footer-nav-title">{{ section.settings.newsletter_heading }}</h4>
+      {% form 'customer', id: 'FooterNewsletter', class: 'footer-newsletter-form' %}
+        <input
+          type="email"
+          name="customer[email]"
+          placeholder="{{ section.settings.newsletter_placeholder }}"
+          required
+          class="footer-newsletter-input"
+        >
+        <button type="submit" class="footer-newsletter-button">
+          {{ section.settings.newsletter_button_text }}
+        </button>
       {% endform %}
     </div>
   </div>
@@ -104,6 +87,36 @@
       "type": "text",
       "id": "email",
       "label": "Contact Email"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Footer Background Color",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Footer Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter Heading",
+      "default": "Stay In Touch"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter Placeholder",
+      "default": "Your email address"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Newsletter Button Text",
+      "default": "Subscribe"
     }
   ],
   "blocks": [
@@ -111,29 +124,21 @@
       "type": "social",
       "name": "Social Link",
       "settings": [
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Platform Name"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "Profile URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "icon",
-          "label": "Icon Image"
-        }
+        { "type": "text", "id": "name", "label": "Platform Name" },
+        { "type": "url", "id": "url", "label": "Profile URL" },
+        { "type": "image_picker", "id": "icon", "label": "Icon Image" }
+      ]
+    },
+    {
+      "type": "nav_group",
+      "name": "Navigation Group",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Group Title" },
+        { "type": "link_list", "id": "menu", "label": "Menu" }
       ]
     }
   ],
-  "max_blocks": 5,
-  "presets": [
-    {
-      "name": "Footer Section"
-    }
-  ]
+  "max_blocks": 10,
+  "presets": [{ "name": "Footer Section" }]
 }
 {% endschema %}

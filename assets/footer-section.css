@@ -1,39 +1,45 @@
 .footer-section {
   padding: 40px 0;
-  background-color: #f8f8f8;
 }
 
+/* Grid layout: 4 / 2 / 1 columns */
 .footer-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
-
-/* Responsive collapse: 2 cols on tablet, 1 on mobile */
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   .footer-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 899px) {
   .footer-wrapper {
     grid-template-columns: 1fr;
+    text-align: center;
   }
 }
 
-/* Column 1: Logo, email, socials */
-.footer-column--info .footer-logo {
+/* Column basics */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column 1: Info */
+.footer-logo {
   max-width: 150px;
   margin-bottom: 16px;
 }
-.footer-column--info .footer-email {
-  display: block;
+.footer-email {
   margin-bottom: 16px;
-  color: #333;
+  color: inherit;
+  text-decoration: none;
 }
-.footer-social-links {
+.footer-social {
   display: flex;
   gap: 8px;
+  margin-bottom: 16px;
 }
 .footer-social-link img {
   width: 24px;
@@ -41,9 +47,6 @@
 }
 
 /* Nav groups */
-.footer-nav-group + .footer-nav-group {
-  margin-top: 24px;
-}
 .footer-nav-title {
   font-size: 16px;
   font-weight: 600;
@@ -57,25 +60,21 @@
 .footer-nav-link {
   display: block;
   margin-bottom: 4px;
-  color: #666;
+  color: inherit;
   text-decoration: none;
 }
 .footer-nav-link:hover {
-  color: #000;
+  text-decoration: underline;
 }
 
 /* Newsletter */
-.footer-newsletter-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
 .footer-newsletter-form {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
-.footer-newsletter-field input {
-  flex: 1;
+.footer-newsletter-input {
+  flex: 1 1 auto;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -87,6 +86,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  white-space: nowrap;
 }
 .footer-newsletter-button:hover {
   background: #000;
