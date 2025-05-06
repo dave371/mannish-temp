@@ -102,7 +102,10 @@
         "text_color": "#ffffff",
         "newsletter_heading": "Stay In Touch",
         "newsletter_placeholder": "Your email address",
-        "newsletter_button_text": "Subscribe"
+        "newsletter_button_text": "Subscribe",
+        "news_input_color": "#ffffff",
+        "news_btn_color": "#c85a17",
+        "news_btn_text_color": "#ffffff"
       }
     },
     "custom_footer_7i63kV": {
