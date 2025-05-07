@@ -1,0 +1,27 @@
+.shipping-delivery-section {
+  padding: 40px 0;
+}
+
+.shipping-delivery-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.shipping-delivery-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shipping-delivery-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .shipping-delivery-content {
+    font-size: 15px;
+  }
+}

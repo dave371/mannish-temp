@@ -1,0 +1,44 @@
+{% comment %}
+  Shipping & Delivery Section
+  — Title + rich text (editable in the theme editor)
+{% endcomment %}
+
+<link rel="stylesheet" href="{{ 'shipping-delivery.css' | asset_url }}">
+
+<section class="shipping-delivery-section page-width">
+  {% if section.settings.title != blank %}
+    <h2 class="shipping-delivery-title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.settings.content != blank %}
+    <div class="shipping-delivery-content">
+      {{ section.settings.content }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Shipping & Delivery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Shipping & Delivery"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Section Content",
+      "default": "<p>All orders are processed within 1–2 business days. You will receive a shipping confirmation email with tracking information once your order has shipped.</p><p>Standard shipping rates apply. For more details, please contact our support team.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shipping & Delivery",
+      "category": "Pages"
+    }
+  ]
+}
+{% endschema %}
