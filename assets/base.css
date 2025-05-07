@@ -3710,3 +3710,9 @@ details-disclosure > details {
   font-size: 32px;
   font-weight: 500;
 }
+
+/* policies css */
+.shopify-policy__container {
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
