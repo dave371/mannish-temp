@@ -25,12 +25,7 @@
     <!-- Image Column -->
     {% if section.settings.image %}
       <div class="about-me-image">
-        <img
-          src="{{ section.settings.image | image_url: width: 400 }}"
-          alt="{{ section.settings.title | escape }}"
-          width="400"
-          height="auto"
-        >
+        {{ section.settings.image | image_url: width: 1920, height: 1080 | image_tag }}
       </div>
     {% endif %}
   </div>
