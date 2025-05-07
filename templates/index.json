@@ -24,11 +24,6 @@
         "sub_title": "Discover products and insights crafted to support your holistic health."
       }
     },
-    "custom_hero_rckJAQ": {
-      "type": "custom-hero",
-      "disabled": true,
-      "settings": {}
-    },
     "feature_cards_tdnLBW": {
       "type": "feature-cards",
       "blocks": {
@@ -114,6 +109,7 @@
       "type": "social-media-section",
       "name": "Social Media Section",
       "settings": {
+        "background_color": "#493030",
         "section_social_title": "Join Our Community",
         "section_social_subtitle": "Follow us for daily health tips, product updates, and motivational content to support your wellness journey.",
         "twitter_url": "https://x.com/MannishHerbiary",
@@ -149,7 +145,6 @@
   },
   "order": [
     "c_hero_miGTPJ",
-    "custom_hero_rckJAQ",
     "feature_cards_tdnLBW",
     "featured_collection",
     "newsletter_section_qV6iNj",
