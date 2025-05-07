@@ -11,72 +11,23 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
     },
-    "faq_section_K6dfga": {
-      "type": "faq-section",
-      "blocks": {
-        "faq_ykymgN": {
-          "type": "faq",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "You can return any unused items within 30 days for a full refund."
-          }
-        },
-        "faq_rxBq33": {
-          "type": "faq",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "You can return any unused items within 30 days for a full refund."
-          }
-        },
-        "faq_7ExePg": {
-          "type": "faq",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "You can return any unused items within 30 days for a full refund."
-          }
-        },
-        "faq_mXhVGq": {
-          "type": "faq",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "You can return any unused items within 30 days for a full refund."
-          }
-        },
-        "faq_HkTffe": {
-          "type": "faq",
-          "settings": {
-            "question": "What is your return policy?",
-            "answer": "You can return any unused items within 30 days for a full refund."
-          }
-        }
-      },
-      "block_order": [
-        "faq_ykymgN",
-        "faq_rxBq33",
-        "faq_7ExePg",
-        "faq_mXhVGq",
-        "faq_HkTffe"
-      ],
-      "disabled": true,
-      "name": "FAQ Section",
+    "shipping_delivery_Cec8dM": {
+      "type": "shipping-delivery",
+      "name": "Shipping & Delivery",
       "settings": {
-        "title": "Your Questions, Answered",
-        "subheading": "Welcome to our FAQ section, where we address common inquiries about our products, services, and wellness resources.",
-        "icon_chevron": "shopify://shop_images/chevron-down_1.svg",
-        "question_bg_color": "#493030",
-        "question_text_color": "#ffffff",
-        "answer_bg_color": "#ffffff",
-        "answer_text_color": "#292929"
+        "title": "Shipping & Delivery",
+        "content": "<p>All orders are processed within 1–2 business days. You will receive a shipping confirmation email with tracking information once your order has shipped.</p><p>Standard shipping rates apply. For more details, please contact our support team.</p>"
       }
     }
   },
   "order": [
     "main",
-    "faq_section_K6dfga"
+    "shipping_delivery_Cec8dM"
   ]
 }
