@@ -16,9 +16,20 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "about_me_nRPrUJ": {
+      "type": "about-me",
+      "name": "About Me",
+      "settings": {
+        "title": "About Me",
+        "subheading": "A little bit about who I am",
+        "content": "<p>Write your about me story here. Use the rich text editor to add formatting, links, or images.</p>",
+        "image": "shopify://shop_images/vitaly-gariev-c19wqNFVv9c-unsplash.jpg"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "about_me_nRPrUJ"
   ]
 }
